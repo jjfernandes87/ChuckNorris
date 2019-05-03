@@ -5,6 +5,9 @@
 ## Build generated
 build/
 DerivedData/
+Facts/build/
+Facts/DerivedData/
+
 
 ## Various settings
 *.pbxuser
@@ -18,6 +21,10 @@ DerivedData/
 xcuserdata/
 
 ## Other
+Gemfile.lock
+Podfile.lock
+Facts/Gemfile.lock
+Facts/Podfile.lock
 *.moved-aside
 *.xccheckout
 *.xcscmblueprint
@@ -39,6 +46,7 @@ playground.xcworkspace
 # Package.pins
 # Package.resolved
 .build/
+Facts/.build/
 
 # CocoaPods
 #
@@ -46,7 +54,8 @@ playground.xcworkspace
 # you should judge for yourself, the pros and cons are mentioned at:
 # https://guides.cocoapods.org/using/using-cocoapods.html#should-i-check-the-pods-directory-into-source-control
 #
-# Pods/
+Pods/
+Facts/Pods/
 
 # Carthage
 #
@@ -54,6 +63,7 @@ playground.xcworkspace
 # Carthage/Checkouts
 
 Carthage/Build
+Facts/Carthage/Build
 
 # fastlane
 #
@@ -64,5 +74,20 @@ Carthage/Build
 
 fastlane/report.xml
 fastlane/Preview.html
-fastlane/screenshots/**/*.png
-fastlane/test_output
+fastlane/README.md
+fastlane/screenshots/
+fastlane/test_output/
+fastlane/output/
+
+Facts/fastlane/report.xml
+Facts/fastlane/Preview.html
+Facts/fastlane/README.md
+Facts/fastlane/screenshots/
+Facts/fastlane/test_output/
+Facts/fastlane/output/
+
+# reports
+reports/
+Facts/cobertura.xml
+Facts/reports/
+Facts/test_output/
