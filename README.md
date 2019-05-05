@@ -8,9 +8,13 @@ Para esse projeto foi usado o VIPER, sendo uma forma de usar a Clean Architectur
 VIPER é formado pelas seguintes palavras: 
 
 View -> Telas
+
 Interactor -> Regras de negócio à nível de aplicação
+
 Presenter -> Transformam dados para serem apresentados ou encaminhados para a interactor
+
 Entity -> Value Objects ou lógicas reaproveitáveis
+
 Router -> Guia de fluxo de telas
 
 ## Pastas
