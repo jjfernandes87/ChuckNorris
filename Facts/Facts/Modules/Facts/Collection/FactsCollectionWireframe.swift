@@ -42,6 +42,10 @@ class FactsCollectionWireframe: NSObject, FactsCollectionWireframeProtocol {
         guard let view = FactsDetailWireframe(content: content).view else { return }
         self.view.navigationController?.pushViewController(view, animated: true)
     }
+    
+    func showSearch() {
+        print("func showSearch()")
+    }
 
 	// MARK: - Private methods
 	private func viewControllerFromStoryboard<T: UIViewController>(_: T.Type, title: String? = nil) -> UIViewController {

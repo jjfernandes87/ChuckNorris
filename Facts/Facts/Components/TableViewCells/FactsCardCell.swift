@@ -19,7 +19,7 @@ class FactsCardCell: CellController {
     var model: Facts
     var delegate: FactsCardCellDelegate?
 
-    init(content: Facts, delegate: FactsCardCellDelegate) {
+    init(content: Facts, delegate: FactsCardCellDelegate?) {
         self.model = content
         self.delegate = delegate
         super.init()
@@ -29,6 +29,7 @@ class FactsCardCell: CellController {
         let cell = loadDefaultCellForTable(tableView: tableView, atIndexPath: indexPath) as! FactsCardCellView
         cell.sharedButton.removeTarget(nil, action: nil, for: .allEvents)
         cell.sharedButton.addTarget(self, action: #selector(sharedContent), for: .touchUpInside)
+        cell.sharedButton.isHidden = self.delegate == nil
         cell.factsLabel.text = self.model.value
         cell.factsLabel.font = self.font()
         return cell

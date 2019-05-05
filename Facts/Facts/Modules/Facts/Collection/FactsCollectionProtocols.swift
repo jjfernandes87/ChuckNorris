@@ -12,6 +12,7 @@ import Foundation
 
 protocol FactsCollectionWireframeProtocol: class {
     func showDetail(_ content: Facts)
+    func showSearch()
 }
 
 // MARK: - Interactor
@@ -25,6 +26,7 @@ protocol FactsCollectionInteractorInputProtocol {
 protocol FactsCollectionPresenterInputProtocol: class {
     func viewDidLoad()
     func viewWillAppear()
+    func didSearchButton()
     func didSelectFact(_ content: Facts)
 }
 

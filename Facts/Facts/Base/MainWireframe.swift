@@ -21,6 +21,7 @@ class MainWireframe: UINavigationController {
         
         self.navigationBar.barStyle = .black
         self.navigationBar.barTintColor = .black
+        self.navigationBar.tintColor = .white
     }
     
     override func viewDidLoad() {

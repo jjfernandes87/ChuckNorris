@@ -8,7 +8,7 @@
 
 import UIKit
 
-class FactsDetailView: UIViewController, FactsDetailPresenterOutputProtocol {
+class FactsDetailView: BaseView {
 
 	// MARK: - Viper Module Properties
 
@@ -18,10 +18,18 @@ class FactsDetailView: UIViewController, FactsDetailPresenterOutputProtocol {
 
 	override func viewDidLoad() {
         super.viewDidLoad()
+        self.presenter.viewDidLoad()
+    }
+    
+    @IBAction func shareAction() {
+        self.presenter.didShareAction()
     }
 
-    // MARK: - FactsDetailPresenterOutputProtocol
+}
 
-	// MARK: - Private Methods
-
+// MARK: - FactsDetailPresenterOutputProtocol
+extension FactsDetailView: FactsDetailPresenterOutputProtocol {
+    func setRows(_ rows: [AnyObject]) {
+        self.tableView.setRows(rows)
+    }
 }

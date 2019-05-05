@@ -12,7 +12,8 @@ import SelfTableViewManager
 class FactsCollectionView: BaseView {
     
     // MARK: - Module @IBoutlets
-    @IBOutlet weak var tableView: SelfTableViewManager!
+    @IBOutlet weak var topLayout: NSLayoutConstraint!
+    @IBOutlet weak var searchButton: UIBarButtonItem!
     
 	// MARK: - Viper Module Properties
 	var presenter: FactsCollectionPresenterInputProtocol!
@@ -29,9 +30,30 @@ class FactsCollectionView: BaseView {
         self.presenter.viewWillAppear()
     }
     
+    override func showPresenting() {
+        super.showPresenting()
+        
+        if self.topLayout.constant == 0 { return }
+        
+        self.topLayout.constant = 0
+        UIView.animate(withDuration: 1.0,
+                       delay: 0,
+                       usingSpringWithDamping: 88,
+                       initialSpringVelocity: 3,
+                       options: .curveEaseIn,
+                       animations: {
+                        self.view.layoutIfNeeded()
+        })
+    }
+    
 	// MARK: - Private Methods
     private func setupScreen() {
         self.tableView.managerProtocol = self
+        self.topLayout.constant = UIScreen.main.bounds.height
+    }
+    
+    @IBAction func searchAction() {
+        self.presenter.didSearchButton()
     }
 }
 

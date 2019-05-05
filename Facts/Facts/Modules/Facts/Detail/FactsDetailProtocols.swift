@@ -17,11 +17,12 @@ protocol FactsDetailWireframeProtocol: class {
 // MARK: - Presenter
 
 protocol FactsDetailPresenterInputProtocol: class {
-
+    func viewDidLoad()
+    func didShareAction()
 }
 
 // MARK: - View
 
 protocol FactsDetailPresenterOutputProtocol: class {
-
+    func setRows(_ rows: [AnyObject])
 }

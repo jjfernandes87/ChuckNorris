@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import SelfTableViewManager
 
 var preloadedLoadingXib: UINib!
 var preloadedNoContentXib: UINib!
@@ -24,6 +25,7 @@ class BaseView: UIViewController {
     
     @IBOutlet weak var noContentXib: UIView?
     @IBOutlet weak var loadingXib: UIView?
+    @IBOutlet weak var tableView: SelfTableViewManager!
     
     @IBOutlet weak var spinner: UIActivityIndicatorView!
     
@@ -61,13 +63,17 @@ class BaseView: UIViewController {
         }
         
         if status == .presenting {
-            spinner.stopAnimating()
+            self.showPresenting()
         }
         
         if(animated) {
             UIView.commitAnimations()
         }
         
+    }
+    
+    func showPresenting() {
+        spinner.stopAnimating()
     }
     
     private func setupScreens() {

@@ -37,6 +37,10 @@ extension FactsCollectionPresenter: FactsCollectionPresenterInputProtocol {
     func didSelectFact(_ content: Facts) {
         self.wireframe.showDetail(content)
     }
+    
+    func didSearchButton() {
+        self.wireframe.showSearch()
+    }
 }
 
 // MARK: - FactsCollectionInteractorOutputProtocol
