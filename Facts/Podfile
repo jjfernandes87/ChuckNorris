@@ -1,17 +1,22 @@
-# Uncomment the next line to define a global platform for your project
-# platform :ios, '9.0'
+source 'https://github.com/cocoapods/specs.git'
+platform :ios, '10.0'
+
+inhibit_all_warnings!
+use_frameworks!
 
 target 'Facts' do
-  # Comment the next line if you're not using Swift and don't want to use dynamic frameworks
+  # Comment the next line if you don't want to use dynamic frameworks
   use_frameworks!
 
   # Pods for Facts
-  pod 'CollectionManager'
+  pod 'Alamofire'
+
+  # Github myself
+  pod 'SelfTableViewManager'
   pod 'ConfigurationProvider'
 
   target 'FactsTests' do
     inherit! :search_paths
-    # Pods for testing
     pod 'Quick'
     pod 'Nimble'
   end
@@ -20,4 +25,16 @@ target 'Facts' do
     
   end
 
+end
+
+post_install do |installer|
+  installer.pods_project.build_configurations.each do |config|
+    config.build_settings.delete('CODE_SIGNING_ALLOWED')
+    config.build_settings.delete('CODE_SIGNING_REQUIRED')
+    config.build_settings['DEBUG_INFORMATION_FORMAT'] = 'dwarf'
+    config.build_settings['CLANG_ENABLE_CODE_COVERAGE'] = 'NO'
+    config.build_settings['LD_RUNPATH_SEARCH_PATHS'] = ['$(FRAMEWORK_SEARCH_PATHS)']
+    config.build_settings['SWIFT_VERSION'] = '4.0'
+    config.build_settings['ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES'] = '$(inherited)'
+  end
 end

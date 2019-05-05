@@ -14,7 +14,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "1C5C87A7227BE5F900021195"
+               BlueprintIdentifier = "1C736E62227F43AF00012954"
                BuildableName = "Facts.app"
                BlueprintName = "Facts"
                ReferencedContainer = "container:Facts.xcodeproj">
@@ -26,13 +26,24 @@
       buildConfiguration = "Debug"
       selectedDebuggerIdentifier = "Xcode.DebuggerFoundation.Debugger.LLDB"
       selectedLauncherIdentifier = "Xcode.DebuggerFoundation.Launcher.LLDB"
+      codeCoverageEnabled = "YES"
+      onlyGenerateCoverageForSpecifiedTargets = "YES"
       shouldUseLaunchSchemeArgsEnv = "YES">
+      <CodeCoverageTargets>
+         <BuildableReference
+            BuildableIdentifier = "primary"
+            BlueprintIdentifier = "1C736E62227F43AF00012954"
+            BuildableName = "Facts.app"
+            BlueprintName = "Facts"
+            ReferencedContainer = "container:Facts.xcodeproj">
+         </BuildableReference>
+      </CodeCoverageTargets>
       <Testables>
          <TestableReference
             skipped = "NO">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "1C5C87BE227BE5FB00021195"
+               BlueprintIdentifier = "1C736E79227F43B000012954"
                BuildableName = "FactsTests.xctest"
                BlueprintName = "FactsTests"
                ReferencedContainer = "container:Facts.xcodeproj">
@@ -42,7 +53,7 @@
             skipped = "NO">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "1C5C87C9227BE5FB00021195"
+               BlueprintIdentifier = "1C736E84227F43B000012954"
                BuildableName = "FactsUITests.xctest"
                BlueprintName = "FactsUITests"
                ReferencedContainer = "container:Facts.xcodeproj">
@@ -52,7 +63,7 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "1C5C87A7227BE5F900021195"
+            BlueprintIdentifier = "1C736E62227F43AF00012954"
             BuildableName = "Facts.app"
             BlueprintName = "Facts"
             ReferencedContainer = "container:Facts.xcodeproj">
@@ -75,7 +86,7 @@
          runnableDebuggingMode = "0">
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "1C5C87A7227BE5F900021195"
+            BlueprintIdentifier = "1C736E62227F43AF00012954"
             BuildableName = "Facts.app"
             BlueprintName = "Facts"
             ReferencedContainer = "container:Facts.xcodeproj">
@@ -85,7 +96,7 @@
       </AdditionalOptions>
    </LaunchAction>
    <ProfileAction
-      buildConfiguration = "Release"
+      buildConfiguration = "Debug"
       shouldUseLaunchSchemeArgsEnv = "YES"
       savedToolIdentifier = ""
       useCustomWorkingDirectory = "NO"
@@ -94,7 +105,7 @@
          runnableDebuggingMode = "0">
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "1C5C87A7227BE5F900021195"
+            BlueprintIdentifier = "1C736E62227F43AF00012954"
             BuildableName = "Facts.app"
             BlueprintName = "Facts"
             ReferencedContainer = "container:Facts.xcodeproj">
@@ -105,7 +116,7 @@
       buildConfiguration = "Debug">
    </AnalyzeAction>
    <ArchiveAction
-      buildConfiguration = "Release"
+      buildConfiguration = "Debug"
       revealArchiveInOrganizer = "YES">
    </ArchiveAction>
 </Scheme>

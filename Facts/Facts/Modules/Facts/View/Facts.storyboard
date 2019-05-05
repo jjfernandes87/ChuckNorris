@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Facts Collection View-->
+        <scene sceneID="0yJ-gf-T5z">
+            <objects>
+                <viewController storyboardIdentifier="FactsCollectionView" id="2aj-bM-ixw" customClass="FactsCollectionView" customModule="Facts" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="zIR-mc-HJo"/>
+                        <viewControllerLayoutGuide type="bottom" id="VJw-nr-gPZ"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="T0n-7X-0uE">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="7yz-J8-Ybv" customClass="SelfTableViewManager" customModule="SelfTableViewManager">
+                                <rect key="frame" x="0.0" y="64" width="375" height="603"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="7yz-J8-Ybv" secondAttribute="trailing" id="9Ii-IR-Q0B"/>
+                            <constraint firstItem="7yz-J8-Ybv" firstAttribute="leading" secondItem="T0n-7X-0uE" secondAttribute="leading" id="Bp4-eo-5ms"/>
+                            <constraint firstItem="VJw-nr-gPZ" firstAttribute="top" secondItem="7yz-J8-Ybv" secondAttribute="bottom" id="XHU-EJ-Sme"/>
+                            <constraint firstItem="7yz-J8-Ybv" firstAttribute="top" secondItem="zIR-mc-HJo" secondAttribute="bottom" id="jxl-3Q-5KV"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="tmq-lN-CLL">
+                        <barButtonItem key="rightBarButtonItem" systemItem="search" id="Htj-TL-9Zq">
+                            <connections>
+                                <action selector="searchAction" destination="2aj-bM-ixw" id="MK7-pF-kdM"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
+                    <connections>
+                        <outlet property="tableView" destination="7yz-J8-Ybv" id="oJI-Bo-HYj"/>
+                        <outlet property="topLayout" destination="jxl-3Q-5KV" id="d00-om-E4f"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="qxF-vk-lxh" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-10" y="152"/>
+        </scene>
+        <!--Facts Detail View-->
+        <scene sceneID="GiY-sW-fZR">
+            <objects>
+                <viewController storyboardIdentifier="FactsDetailView" useStoryboardIdentifierAsRestorationIdentifier="YES" id="jQl-cH-TzR" customClass="FactsDetailView" customModule="Facts" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="8ru-CW-qfX"/>
+                        <viewControllerLayoutGuide type="bottom" id="pVh-xJ-DK9"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="2l4-Tv-3Kg">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="AQI-Rf-Jt7" customClass="SelfTableViewManager" customModule="SelfTableViewManager">
+                                <rect key="frame" x="0.0" y="64" width="375" height="603"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="AQI-Rf-Jt7" firstAttribute="top" secondItem="8ru-CW-qfX" secondAttribute="bottom" id="3IG-hl-gjD"/>
+                            <constraint firstAttribute="trailing" secondItem="AQI-Rf-Jt7" secondAttribute="trailing" id="9JS-mZ-bgM"/>
+                            <constraint firstItem="pVh-xJ-DK9" firstAttribute="top" secondItem="AQI-Rf-Jt7" secondAttribute="bottom" id="RCV-T0-qOp"/>
+                            <constraint firstItem="AQI-Rf-Jt7" firstAttribute="leading" secondItem="2l4-Tv-3Kg" secondAttribute="leading" id="p8A-4O-pPj"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="tCq-3v-Rxp">
+                        <barButtonItem key="rightBarButtonItem" systemItem="action" id="oFW-UW-gSW">
+                            <connections>
+                                <action selector="shareAction" destination="jQl-cH-TzR" id="5wp-py-km2"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
+                    <connections>
+                        <outlet property="tableView" destination="AQI-Rf-Jt7" id="StI-BD-4bK"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="aMI-gy-TLE" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="686" y="152"/>
+        </scene>
+    </scenes>
+</document>
