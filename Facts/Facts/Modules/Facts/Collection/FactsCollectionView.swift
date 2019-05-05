@@ -9,7 +9,7 @@
 import UIKit
 import SelfTableViewManager
 
-class FactsCollectionView: UIViewController {
+class FactsCollectionView: BaseView {
     
     // MARK: - Module @IBoutlets
     @IBOutlet weak var tableView: SelfTableViewManager!
@@ -39,6 +39,11 @@ class FactsCollectionView: UIViewController {
 extension FactsCollectionView: FactsCollectionPresenterOutputProtocol {
     func setRows(_ rows: [AnyObject]) {
         self.tableView.setRows(rows)
+        self.setViewStatus((rows.count > 0) ? BaseStatus.presenting : BaseStatus.noContent, animated: false)
+    }
+    
+    func setLoadingView() {
+        self.setViewStatus(.loading)
     }
 }
 

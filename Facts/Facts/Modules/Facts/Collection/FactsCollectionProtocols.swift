@@ -37,4 +37,5 @@ protocol FactsCollectionInteractorOutputProtocol: class {
 
 protocol FactsCollectionPresenterOutputProtocol: class {
     func setRows(_ rows: [AnyObject])
+    func setLoadingView()
 }

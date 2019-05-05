@@ -27,7 +27,7 @@ class FactsCollectionPresenter: NSObject {
 // MARK: - FactsCollectionPresenterInputProtocol
 extension FactsCollectionPresenter: FactsCollectionPresenterInputProtocol {
     func viewDidLoad() {
-        
+        self.view.setLoadingView()
     }
     
     func viewWillAppear() {

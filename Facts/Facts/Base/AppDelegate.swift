@@ -17,6 +17,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         self.initWindow()
+        self.preloadedXib()
         self.initMainRouter()
         return true
     }
@@ -78,5 +79,10 @@ extension AppDelegate {
     func initMainRouter() {
         self.mainRouter = MainWireframe(window: window)
         self.mainRouter?.launch()
+    }
+    
+    func preloadedXib() {
+        preloadedLoadingXib = UINib(nibName: "LoadingView", bundle: Bundle.main)
+        preloadedNoContentXib = UINib(nibName: "NoContent", bundle: Bundle.main)
     }
 }
