@@ -1,0 +1,208 @@
+{
+    "responseStatus": {
+        "statusCode": 200,
+        "success": true,
+        "message": "Sucesso"
+    },
+    "data": {
+        "total": 28,
+        "result": [
+            {
+                "category": null,
+                "icon_url": "https://assets.chucknorris.host/img/avatar/chuck-norris.png",
+                "id": "xs-MfFrTTwSsEM4jVnNDiw",
+                "url": "https://api.chucknorris.io/jokes/xs-MfFrTTwSsEM4jVnNDiw",
+                "value": "All Chuck Norris facts should be told in a respectful whisper, whilst laying one's palms and forehead on the floor."
+            },
+            {
+                "category": null,
+                "icon_url": "https://assets.chucknorris.host/img/avatar/chuck-norris.png",
+                "id": "e4dpoqlqTLequJj6tB5JQw",
+                "url": "https://api.chucknorris.io/jokes/e4dpoqlqTLequJj6tB5JQw",
+                "value": "All the religions of the world believe that reading Chuck Norris facts aloud daily increases your chances of surviving till the next day."
+            },
+            {
+                "category": null,
+                "icon_url": "https://assets.chucknorris.host/img/avatar/chuck-norris.png",
+                "id": "LQDsZuk2RhSu3DKHpxE7Gw",
+                "url": "https://api.chucknorris.io/jokes/LQDsZuk2RhSu3DKHpxE7Gw",
+                "value": "The greatest trick Chuck Norris ever pulled was convincing the world that the Chuck Norris facts are just jokes."
+            },
+            {
+                "category": null,
+                "icon_url": "https://assets.chucknorris.host/img/avatar/chuck-norris.png",
+                "id": "yclUSwBeS4S6fLLQqep_Ag",
+                "url": "https://api.chucknorris.io/jokes/yclUSwBeS4S6fLLQqep_Ag",
+                "value": "Chuck Norris couldn't find any of BobW entries on any of the first 25 pages of the \"Popular Chuck Norris Facts\" listings. Hmmmmm"
+            },
+            {
+                "category": null,
+                "icon_url": "https://assets.chucknorris.host/img/avatar/chuck-norris.png",
+                "id": "CiR5eP0iQxSUcsf30G-rgg",
+                "url": "https://api.chucknorris.io/jokes/CiR5eP0iQxSUcsf30G-rgg",
+                "value": "In museums, Chuck Norris is allowed to touch the artifacts."
+            },
+            {
+                "category": null,
+                "icon_url": "https://assets.chucknorris.host/img/avatar/chuck-norris.png",
+                "id": "F4teRRoqSFmT7-BNE5EjLQ",
+                "url": "https://api.chucknorris.io/jokes/F4teRRoqSFmT7-BNE5EjLQ",
+                "value": "You don't just see Chuck Norris facts, you experience them and merely accept truth for what it is."
+            },
+            {
+                "category": null,
+                "icon_url": "https://assets.chucknorris.host/img/avatar/chuck-norris.png",
+                "id": "384VhSbxSMGpuO1SDE7Z3w",
+                "url": "https://api.chucknorris.io/jokes/384VhSbxSMGpuO1SDE7Z3w",
+                "value": "Chuck Norris facts started in 1930, 10 years before Chuck Norris was born..."
+            },
+            {
+                "category": null,
+                "icon_url": "https://assets.chucknorris.host/img/avatar/chuck-norris.png",
+                "id": "pr4oPWZdQpyF1lyiTvl7Cw",
+                "url": "https://api.chucknorris.io/jokes/pr4oPWZdQpyF1lyiTvl7Cw",
+                "value": "it was once thought that Chuck Norris never lies, until he said that Chuck Norris facts arent actually true"
+            },
+            {
+                "category": null,
+                "icon_url": "https://assets.chucknorris.host/img/avatar/chuck-norris.png",
+                "id": "TBfBEtPaSu6UDay6lX7MDQ",
+                "url": "https://api.chucknorris.io/jokes/TBfBEtPaSu6UDay6lX7MDQ",
+                "value": "There is no such thing as a Chuck Norris joke, only facts."
+            },
+            {
+                "category": null,
+                "icon_url": "https://assets.chucknorris.host/img/avatar/chuck-norris.png",
+                "id": "jpWRorhwSSmVh4EzW00oXQ",
+                "url": "https://api.chucknorris.io/jokes/jpWRorhwSSmVh4EzW00oXQ",
+                "value": "There are no Chuck Norris Jokes. Only Chuck Norris Facts."
+            },
+            {
+                "category": null,
+                "icon_url": "https://assets.chucknorris.host/img/avatar/chuck-norris.png",
+                "id": "Fi7I2cQzTeiysPsfHKLCqg",
+                "url": "https://api.chucknorris.io/jokes/Fi7I2cQzTeiysPsfHKLCqg",
+                "value": "Chuck Norris once stumbled upon a website with random facts about himself. Although he was flattered, he sent an email to each person who submitted an untrue fact. Upon opening the email, a leather cowboy boot came through each computer screen and roundhouse kicked everyone within a 30 meter radius."
+            },
+            {
+                "category": null,
+                "icon_url": "https://assets.chucknorris.host/img/avatar/chuck-norris.png",
+                "id": "VUWK2b0lQEuSMpwdwo0TeA",
+                "url": "https://api.chucknorris.io/jokes/VUWK2b0lQEuSMpwdwo0TeA",
+                "value": "Submission of Chuck Norris facts is known add inches in males and increased bust size in females."
+            },
+            {
+                "category": null,
+                "icon_url": "https://assets.chucknorris.host/img/avatar/chuck-norris.png",
+                "id": "M6HsH--TRzabbpgBMBLgKw",
+                "url": "https://api.chucknorris.io/jokes/M6HsH--TRzabbpgBMBLgKw",
+                "value": "The Chuck Norris Facts sites are actually pages taken from Chuck Norris daily diary"
+            },
+            {
+                "category": null,
+                "icon_url": "https://assets.chucknorris.host/img/avatar/chuck-norris.png",
+                "id": "uTK2OwUPRQu5yHihN2rzCQ",
+                "url": "https://api.chucknorris.io/jokes/uTK2OwUPRQu5yHihN2rzCQ",
+                "value": "Little known fact: the Internet would've shut down from lack of interest around 2005 if it wasn't for Chuck Norris facts."
+            },
+            {
+                "category": null,
+                "icon_url": "https://assets.chucknorris.host/img/avatar/chuck-norris.png",
+                "id": "7TOymQUdSwyr8rqLMWwCGg",
+                "url": "https://api.chucknorris.io/jokes/7TOymQUdSwyr8rqLMWwCGg",
+                "value": "Plato got his facts wrong. It was Chuck Norris that destroyed Atlantis."
+            },
+            {
+                "category": null,
+                "icon_url": "https://assets.chucknorris.host/img/avatar/chuck-norris.png",
+                "id": "XHvgA1qfQcqcNevFgs_yhg",
+                "url": "https://api.chucknorris.io/jokes/XHvgA1qfQcqcNevFgs_yhg",
+                "value": "Welcome to Chucknorrism. The site of Chuck Norris facts. Make a fact or you'll piss off Chuck Norris."
+            },
+            {
+                "category": null,
+                "icon_url": "https://assets.chucknorris.host/img/avatar/chuck-norris.png",
+                "id": "yV31CyhCR4qBbC2qN9CrBQ",
+                "url": "https://api.chucknorris.io/jokes/yV31CyhCR4qBbC2qN9CrBQ",
+                "value": "Chuck Norris has gotten wind that some \"Twilighters\" think Chuck Norris facts are actually Edward Cullen's!?  Chuck Norris' response to this ---  \"Choose the wolf, Bella. The pale-skinned white man is nothing but a sparkling fancy-pansy\"   'cause there is no theory of evolution - just a list of creatures Chuck Norris allows to live."
+            },
+            {
+                "category": null,
+                "icon_url": "https://assets.chucknorris.host/img/avatar/chuck-norris.png",
+                "id": "-pKGtP8JRMOnAdiLaEkxEQ",
+                "url": "https://api.chucknorris.io/jokes/-pKGtP8JRMOnAdiLaEkxEQ",
+                "value": "Chuck Norris visited this website before. But he didn't submit a fact, he looked all 8616 facts. That includes this fact."
+            },
+            {
+                "category": null,
+                "icon_url": "https://assets.chucknorris.host/img/avatar/chuck-norris.png",
+                "id": "6ADZhemVQPeBh_T9RDTvtA",
+                "url": "https://api.chucknorris.io/jokes/6ADZhemVQPeBh_T9RDTvtA",
+                "value": "There are no facts about Chuck Norris - only understatements."
+            },
+            {
+                "category": null,
+                "icon_url": "https://assets.chucknorris.host/img/avatar/chuck-norris.png",
+                "id": "ccyFKy17Q6WqLTFkR0Y8Fg",
+                "url": "https://api.chucknorris.io/jokes/ccyFKy17Q6WqLTFkR0Y8Fg",
+                "value": "It's said that, when this website gets to Fact #9001, Chuck Norris will kick it in the URL, rocketing it up to 10,000 facts."
+            },
+            {
+                "category": null,
+                "icon_url": "https://assets.chucknorris.host/img/avatar/chuck-norris.png",
+                "id": "4oayF7hmR2yKmwIc239WvA",
+                "url": "https://api.chucknorris.io/jokes/4oayF7hmR2yKmwIc239WvA",
+                "value": "Very few Chuck Norris Facts apply to our universe. However, Chuck Norris has not ever said which ones they are, so it's best not to take any risks."
+            },
+            {
+                "category": null,
+                "icon_url": "https://assets.chucknorris.host/img/avatar/chuck-norris.png",
+                "id": "bk4ffpNHSLKVyfZ747pzWQ",
+                "url": "https://api.chucknorris.io/jokes/bk4ffpNHSLKVyfZ747pzWQ",
+                "value": "This is a web site for NEW AND ONLY NEW Chuck Norris Facts.If Chuck Norris finds out(and he will find out) you have posted one that you read or heard....Beg for Merciful God to take you and not Chuck Norris"
+            },
+            {
+                "category": null,
+                "icon_url": "https://assets.chucknorris.host/img/avatar/chuck-norris.png",
+                "id": "95l3KzQ8SR64X8bHXr0AaQ",
+                "url": "https://api.chucknorris.io/jokes/95l3KzQ8SR64X8bHXr0AaQ",
+                "value": "All the Chuck Norris facts you have read or ever will read took place within the first minute of him creating himself."
+            },
+            {
+                "category": null,
+                "icon_url": "https://assets.chucknorris.host/img/avatar/chuck-norris.png",
+                "id": "94lUlZz8QqSS1EylCaQGQQ",
+                "url": "https://api.chucknorris.io/jokes/94lUlZz8QqSS1EylCaQGQQ",
+                "value": "Chuck Norris can read the top 10 Chuck Norris facts... Without even slightly grinning."
+            },
+            {
+                "category": null,
+                "icon_url": "https://assets.chucknorris.host/img/avatar/chuck-norris.png",
+                "id": "5XQ7Aq6yRJeF976LbPNm8g",
+                "url": "https://api.chucknorris.io/jokes/5XQ7Aq6yRJeF976LbPNm8g",
+                "value": "The Chuck Norris facts game is played out... And we should all stop contributing to this stupid shit! Unless your a dickless gamer that dwells on this Chuck Norris nonsense"
+            },
+            {
+                "category": null,
+                "icon_url": "https://assets.chucknorris.host/img/avatar/chuck-norris.png",
+                "id": "yvGZt_YlTy-Q58qLCOX76w",
+                "url": "https://api.chucknorris.io/jokes/yvGZt_YlTy-Q58qLCOX76w",
+                "value": "The more Chuck Norris facts you submit the better your chance of going to heaven."
+            },
+            {
+                "category": null,
+                "icon_url": "https://assets.chucknorris.host/img/avatar/chuck-norris.png",
+                "id": "AgqkfzinSrucbYB9A1Agqg",
+                "url": "https://api.chucknorris.io/jokes/AgqkfzinSrucbYB9A1Agqg",
+                "value": "People add inches to their biceps by using dumbbells; people add a foot to their bicep submitting Chuck Norris facts."
+            },
+            {
+                "category": null,
+                "icon_url": "https://assets.chucknorris.host/img/avatar/chuck-norris.png",
+                "id": "90n61jpVQz2kyhIFaVNulg",
+                "url": "https://api.chucknorris.io/jokes/90n61jpVQz2kyhIFaVNulg",
+                "value": "Chuck Norris  ) Plz vote facts 1063-1067 as high as you can"
+            }
+        ]
+    }
+}

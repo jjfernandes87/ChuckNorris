@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Facts Collection View-->
+        <scene sceneID="0yJ-gf-T5z">
+            <objects>
+                <viewController storyboardIdentifier="FactsCollectionView" id="2aj-bM-ixw" customClass="FactsCollectionView" customModule="Facts" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="zIR-mc-HJo"/>
+                        <viewControllerLayoutGuide type="bottom" id="VJw-nr-gPZ"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="T0n-7X-0uE">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="7yz-J8-Ybv" customClass="SelfTableViewManager" customModule="SelfTableViewManager">
+                                <rect key="frame" x="0.0" y="20" width="375" height="647"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="7yz-J8-Ybv" secondAttribute="trailing" id="9Ii-IR-Q0B"/>
+                            <constraint firstItem="7yz-J8-Ybv" firstAttribute="leading" secondItem="T0n-7X-0uE" secondAttribute="leading" id="Bp4-eo-5ms"/>
+                            <constraint firstItem="VJw-nr-gPZ" firstAttribute="top" secondItem="7yz-J8-Ybv" secondAttribute="bottom" id="XHU-EJ-Sme"/>
+                            <constraint firstItem="7yz-J8-Ybv" firstAttribute="top" secondItem="zIR-mc-HJo" secondAttribute="bottom" id="jxl-3Q-5KV"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="tableView" destination="7yz-J8-Ybv" id="oJI-Bo-HYj"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="qxF-vk-lxh" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-10" y="152"/>
+        </scene>
+        <!--Facts Detail View-->
+        <scene sceneID="GiY-sW-fZR">
+            <objects>
+                <viewController storyboardIdentifier="FactsDetailView" useStoryboardIdentifierAsRestorationIdentifier="YES" id="jQl-cH-TzR" customClass="FactsDetailView" customModule="Facts" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="8ru-CW-qfX"/>
+                        <viewControllerLayoutGuide type="bottom" id="pVh-xJ-DK9"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="2l4-Tv-3Kg">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="aMI-gy-TLE" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="686" y="152"/>
+        </scene>
+    </scenes>
+</document>
