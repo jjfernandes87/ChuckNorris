@@ -44,6 +44,7 @@
 		1CB59B3E227F6B22002F2807 /* BaseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CB59B3C227F6B22002F2807 /* BaseView.swift */; };
 		1CB59B3F227F6B22002F2807 /* LoadingView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1CB59B3D227F6B22002F2807 /* LoadingView.xib */; };
 		1CB59B41227F6D0B002F2807 /* NoContent.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1CB59B40227F6D0B002F2807 /* NoContent.xib */; };
+		1CB59B43227F80C5002F2807 /* ColorGuide.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CB59B42227F80C5002F2807 /* ColorGuide.swift */; };
 		67564293C8C622D96F52D6F7 /* Pods_Facts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 58456EEC3C6EED86FAEF4AB2 /* Pods_Facts.framework */; };
 		695F6234E32190C51C096173 /* Pods_Facts_FactsUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D41EA7C169C5366351A1264C /* Pods_Facts_FactsUITests.framework */; };
 		F05F707E004DAE4E3FFDBD91 /* Pods_FactsTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CE68C48FAE01219C097F81DF /* Pods_FactsTests.framework */; };
@@ -110,6 +111,7 @@
 		1CB59B3C227F6B22002F2807 /* BaseView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseView.swift; sourceTree = "<group>"; };
 		1CB59B3D227F6B22002F2807 /* LoadingView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LoadingView.xib; sourceTree = "<group>"; };
 		1CB59B40227F6D0B002F2807 /* NoContent.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NoContent.xib; sourceTree = "<group>"; };
+		1CB59B42227F80C5002F2807 /* ColorGuide.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorGuide.swift; sourceTree = "<group>"; };
 		58456EEC3C6EED86FAEF4AB2 /* Pods_Facts.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Facts.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		625D0AF07B85BF0DDDA3AF6C /* Pods-Facts.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Facts.debug.xcconfig"; path = "Target Support Files/Pods-Facts/Pods-Facts.debug.xcconfig"; sourceTree = "<group>"; };
 		8F04D40E4EC4410BD62E76B3 /* Pods-Facts-FactsUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Facts-FactsUITests.release.xcconfig"; path = "Target Support Files/Pods-Facts-FactsUITests/Pods-Facts-FactsUITests.release.xcconfig"; sourceTree = "<group>"; };
@@ -344,6 +346,7 @@
 			children = (
 				1CB59B1C227F5C3E002F2807 /* UIFontGuide.swift */,
 				1CB59B26227F5F58002F2807 /* JSONDecoderGuide.swift */,
+				1CB59B42227F80C5002F2807 /* ColorGuide.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -719,6 +722,7 @@
 				1CB59AF5227F49C8002F2807 /* FactsCollectionView.swift in Sources */,
 				1CB59AF6227F49C8002F2807 /* FactsCollectionWireframe.swift in Sources */,
 				1CB59B29227F6018002F2807 /* RequestService.swift in Sources */,
+				1CB59B43227F80C5002F2807 /* ColorGuide.swift in Sources */,
 				1C736E67227F43AF00012954 /* AppDelegate.swift in Sources */,
 				1CB59AF4227F49C8002F2807 /* FactsCollectionInteractor.swift in Sources */,
 				1CB59AF3227F49C8002F2807 /* FactsCollectionProtocols.swift in Sources */,
