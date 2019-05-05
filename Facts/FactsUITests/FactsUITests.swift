@@ -11,24 +11,43 @@ import XCTest
 class FactsUITests: XCTestCase {
 
     override func setUp() {
-        // Put setup code here. This method is called before the invocation of each test method in the class.
-
-        // In UI tests it is usually best to stop immediately when a failure occurs.
         continueAfterFailure = false
-
-        // UI tests must launch the application that they test. Doing this in setup will make sure it happens for each test method.
-        XCUIApplication().launch()
-
-        // In UI tests it’s important to set the initial state - such as interface orientation - required for your tests before they run. The setUp method is a good place to do this.
+        let app = XCUIApplication()
+        setupSnapshot(app)
+        app.launch()
     }
 
     override func tearDown() {
-        // Put teardown code here. This method is called after the invocation of each test method in the class.
+        super.tearDown()
     }
 
-    func testExample() {
-        // Use recording to get started writing UI tests.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
+    func testLaunchApp() {
+        let app = XCUIApplication()
+        XCTAssertTrue(app.navigationBars["CHUCK NORRIS FACTS"].exists, "did not show content")
+        snapshot("1Home")
     }
-
+    
+    func testFactsCard() {
+        let app = XCUIApplication()
+        let text = "All Chuck Norris facts should be told in a respectful whisper, whilst laying one's palms and forehead on the floor."
+        XCTAssertTrue(app.staticTexts[text].exists, "did not show content")
+    }
+    
+    func testDetailFact() {
+        let app = XCUIApplication()
+        app.tables.cells.element(boundBy: 1).tap()
+        
+        let text = "All the religions"
+        XCTAssertTrue(app.tables.cells.staticTexts[text].exists, "did not show content")
+        snapshot("2Detail")
+    }
+    
+    func testDetailFactShared() {
+        let app = XCUIApplication()
+        app.tables.cells.element(boundBy: 1).tap()
+        app.navigationBars["Facts.FactsDetailView"].buttons["Share"].tap()
+        XCTAssertTrue(app.buttons["Cancel"].exists, "shared controller did not show")
+        snapshot("3Shared detail content")
+    }
+    
 }

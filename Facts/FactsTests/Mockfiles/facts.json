@@ -8,7 +8,7 @@
         "total": 28,
         "result": [
             {
-                "category": null,
+                "category": ["dev"],
                 "icon_url": "https://assets.chucknorris.host/img/avatar/chuck-norris.png",
                 "id": "xs-MfFrTTwSsEM4jVnNDiw",
                 "url": "https://api.chucknorris.io/jokes/xs-MfFrTTwSsEM4jVnNDiw",
@@ -19,7 +19,7 @@
                 "icon_url": "https://assets.chucknorris.host/img/avatar/chuck-norris.png",
                 "id": "e4dpoqlqTLequJj6tB5JQw",
                 "url": "https://api.chucknorris.io/jokes/e4dpoqlqTLequJj6tB5JQw",
-                "value": "All the religions of the world believe that reading Chuck Norris facts aloud daily increases your chances of surviving till the next day."
+                "value": "All the religions"
             },
             {
                 "category": null,

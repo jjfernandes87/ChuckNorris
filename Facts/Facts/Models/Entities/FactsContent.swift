@@ -19,16 +19,6 @@ struct FactsContent: Codable {
 
 struct Facts: Codable {
     let category: [String]?
-    let iconUrl: URL
-    let id: String
     let url: URL
     let value: String
-    
-    enum CodingKeys: String, CodingKey {
-        case category = "category"
-        case iconUrl = "icon_url"
-        case id = "id"
-        case url = "url"
-        case value = "value"
-    }
 }
