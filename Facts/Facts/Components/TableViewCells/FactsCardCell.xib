@@ -4,6 +4,7 @@
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
+        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -29,19 +30,31 @@
                                 <rect key="frame" x="16" y="16" width="256" height="56.5"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Y5d-6a-gPo">
-                                        <rect key="frame" x="0.0" y="0.0" width="256" height="20.5"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="256" height="21.5"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Shb-TG-35p">
-                                        <rect key="frame" x="218" y="25.5" width="38" height="31"/>
-                                        <state key="normal" title="share"/>
-                                    </button>
+                                    <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="iqS-hi-BTH">
+                                        <rect key="frame" x="0.0" y="26.5" width="256" height="30"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sAs-Xe-Hfe">
+                                                <rect key="frame" x="0.0" y="0.0" width="128" height="30"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <color key="textColor" red="0.12941176470588234" green="0.6180890378042907" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="right" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Shb-TG-35p">
+                                                <rect key="frame" x="128" y="0.0" width="128" height="30"/>
+                                                <state key="normal" title="compartilhar"/>
+                                            </button>
+                                        </subviews>
+                                    </stackView>
                                 </subviews>
                                 <constraints>
                                     <constraint firstItem="Y5d-6a-gPo" firstAttribute="leading" secondItem="Vye-QV-g4j" secondAttribute="leading" id="C8u-NR-f13"/>
                                     <constraint firstAttribute="trailing" secondItem="Y5d-6a-gPo" secondAttribute="trailing" id="IrM-nH-EAq"/>
+                                    <constraint firstItem="iqS-hi-BTH" firstAttribute="leading" secondItem="Vye-QV-g4j" secondAttribute="leading" id="ZGT-Z0-DJk"/>
                                 </constraints>
                             </stackView>
                         </subviews>
@@ -67,6 +80,7 @@
                 <outlet property="controller" destination="-1" id="Eif-eH-ILa"/>
                 <outlet property="factsLabel" destination="Y5d-6a-gPo" id="sqH-XL-F4G"/>
                 <outlet property="sharedButton" destination="Shb-TG-35p" id="ywi-Nr-5um"/>
+                <outlet property="tagLabel" destination="sAs-Xe-Hfe" id="Dbt-lS-RQp"/>
             </connections>
             <point key="canvasLocation" x="47.826086956521742" y="35.491071428571423"/>
         </tableViewCell>

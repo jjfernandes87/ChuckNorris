@@ -32,6 +32,7 @@ class FactsCardCell: CellController {
         cell.sharedButton.isHidden = self.delegate == nil
         cell.factsLabel.text = self.model.value
         cell.factsLabel.font = self.font()
+        cell.tagLabel.text = self.model.category?.last?.uppercased() ?? "UNCATEGORIZED"
         return cell
     }
     
@@ -57,6 +58,10 @@ class FactsCardCellView: CellView {
         super.awakeFromNib()
         self.content.layer.borderWidth = 2
         self.content.layer.borderColor = UIColor.groupTableViewBackground.cgColor
+        self.tagLabel.backgroundColor = .blue
+        self.tagLabel.font = .h3
+        self.tagLabel.textColor = .white
+        self.tagLabel.textAlignment = .center
     }
     
     override func setHighlighted(_ highlighted: Bool, animated: Bool) {
