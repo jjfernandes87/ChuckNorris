@@ -25,6 +25,7 @@ protocol SearchInteractorInputProtocol {
 protocol SearchPresenterInputProtocol: class {
     func viewDidLoad()
     func searchBarCancelButtonClicked()
+    func searchBarSearch(_ text: String)
 }
 
 protocol SearchInteractorOutputProtocol: class {

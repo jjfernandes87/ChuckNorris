@@ -35,6 +35,10 @@ extension SearchPresenter: SearchPresenterInputProtocol {
     func searchBarCancelButtonClicked() {
         self.wireframe.dismissSearchBar()
     }
+    
+    func searchBarSearch(_ text: String) {
+        
+    }
 }
 
 // MARK: - SearchInteractorOutputProtocol

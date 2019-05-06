@@ -53,4 +53,9 @@ extension SearchView: UISearchBarDelegate {
     func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
         self.presenter.searchBarCancelButtonClicked()
     }
+    
+    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+        guard let text = searchBar.text else { return }
+        self.presenter.searchBarSearch(text)
+    }
 }
