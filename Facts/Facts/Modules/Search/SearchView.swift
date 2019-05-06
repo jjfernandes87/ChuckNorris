@@ -9,7 +9,7 @@
 import UIKit
 
 class SearchView: BaseView {
-
+    
 	// MARK: - Viper Module Properties
 	var presenter: SearchPresenterInputProtocol!
     var search: UISearchBar!
@@ -24,7 +24,7 @@ class SearchView: BaseView {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        self.search.setShowsCancelButton(true, animated: true)
+        self.searchBecomeResponder()
     }
 
     // MARK: - Private Methods
@@ -33,6 +33,11 @@ class SearchView: BaseView {
         self.search.delegate = self
         self.navigationItem.titleView = search
         self.navigationItem.hidesBackButton = true
+    }
+    
+    private func searchBecomeResponder() {
+        self.search.setShowsCancelButton(true, animated: true)
+        self.search.becomeFirstResponder()
     }
 }
 
