@@ -59,7 +59,7 @@ class FactsCardCellView: CellView {
         self.content.layer.borderWidth = 2
         self.content.layer.borderColor = UIColor.groupTableViewBackground.cgColor
         self.tagLabel.backgroundColor = .blue
-        self.tagLabel.font = .h3
+        self.tagLabel.font = .h2
         self.tagLabel.textColor = .white
         self.tagLabel.textAlignment = .center
     }

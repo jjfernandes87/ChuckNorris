@@ -19,6 +19,10 @@ extension UIFont {
     }
     
     @nonobjc class var h3: UIFont {
+        return UIFont.boldSystemFont(ofSize: 16)
+    }
+    
+    @nonobjc class var h4: UIFont {
         return UIFont.boldSystemFont(ofSize: 12)
     }
 }

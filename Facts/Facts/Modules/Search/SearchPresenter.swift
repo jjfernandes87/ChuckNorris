@@ -24,6 +24,7 @@ extension SearchPresenter: SearchPresenterInputProtocol {
     func viewDidLoad() {
         var rows = [AnyObject]()
         rows.append(HeaderCell(title: "Sugestões"))
+        rows.append(TagCloudCell(tags: ["games", "sports", "dev", "science", "technology", "music", "travel", "carrer"]))
         rows.append(HeaderCell(title: "Ultimas buscas"))
         rows.append(SearchItemCell(title: "Star Wars"))
         rows.append(SearchItemCell(title: "Github"))

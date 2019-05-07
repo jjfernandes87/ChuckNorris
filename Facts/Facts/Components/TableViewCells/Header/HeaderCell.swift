@@ -31,7 +31,7 @@ class HeaderCellView: CellView {
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        self.titleLabel.font = .h3
+        self.titleLabel.font = .h4
         self.titleLabel.textColor = .lightGray
     }
 }

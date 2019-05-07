@@ -7,6 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1C36D1DE22819D0400A7447B /* TagCloudCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C36D1DC22819D0400A7447B /* TagCloudCell.swift */; };
+		1C36D1DF22819D0400A7447B /* TagCloudCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1C36D1DD22819D0400A7447B /* TagCloudCell.xib */; };
+		1C36D1E322819E1500A7447B /* TagCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C36D1E122819E1500A7447B /* TagCell.swift */; };
+		1C36D1E422819E1500A7447B /* TagCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1C36D1E222819E1500A7447B /* TagCell.xib */; };
+		1C36D1E72281A69600A7447B /* TagCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C36D1E62281A69600A7447B /* TagCollectionView.swift */; };
+		1C36D1E92281A87A00A7447B /* CollectionViewFlowLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C36D1E82281A87A00A7447B /* CollectionViewFlowLayout.swift */; };
+		1C36D1EC2281A9D700A7447B /* StringGuide.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C36D1EB2281A9D700A7447B /* StringGuide.swift */; };
 		1C736E67227F43AF00012954 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C736E66227F43AF00012954 /* AppDelegate.swift */; };
 		1C736E6F227F43AF00012954 /* Facts.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 1C736E6D227F43AF00012954 /* Facts.xcdatamodeld */; };
 		1C736E71227F43B000012954 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1C736E70227F43B000012954 /* Assets.xcassets */; };
@@ -85,6 +92,13 @@
 
 /* Begin PBXFileReference section */
 		05B9DB8E92DAD1C8320705B4 /* Pods-FactsTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FactsTests.release.xcconfig"; path = "Target Support Files/Pods-FactsTests/Pods-FactsTests.release.xcconfig"; sourceTree = "<group>"; };
+		1C36D1DC22819D0400A7447B /* TagCloudCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TagCloudCell.swift; sourceTree = "<group>"; };
+		1C36D1DD22819D0400A7447B /* TagCloudCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TagCloudCell.xib; sourceTree = "<group>"; };
+		1C36D1E122819E1500A7447B /* TagCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TagCell.swift; sourceTree = "<group>"; };
+		1C36D1E222819E1500A7447B /* TagCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TagCell.xib; sourceTree = "<group>"; };
+		1C36D1E62281A69600A7447B /* TagCollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TagCollectionView.swift; sourceTree = "<group>"; };
+		1C36D1E82281A87A00A7447B /* CollectionViewFlowLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionViewFlowLayout.swift; sourceTree = "<group>"; };
+		1C36D1EB2281A9D700A7447B /* StringGuide.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringGuide.swift; sourceTree = "<group>"; };
 		1C736E63227F43AF00012954 /* Facts.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Facts.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1C736E66227F43AF00012954 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		1C736E6E227F43AF00012954 /* Facts.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Facts.xcdatamodel; sourceTree = "<group>"; };
@@ -193,6 +207,41 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		1C36D1DB22819CD800A7447B /* TagCloud */ = {
+			isa = PBXGroup;
+			children = (
+				1C36D1DC22819D0400A7447B /* TagCloudCell.swift */,
+				1C36D1DD22819D0400A7447B /* TagCloudCell.xib */,
+			);
+			path = TagCloud;
+			sourceTree = "<group>";
+		};
+		1C36D1E022819DF400A7447B /* CollectionViewCell */ = {
+			isa = PBXGroup;
+			children = (
+				1C36D1E122819E1500A7447B /* TagCell.swift */,
+				1C36D1E222819E1500A7447B /* TagCell.xib */,
+			);
+			path = CollectionViewCell;
+			sourceTree = "<group>";
+		};
+		1C36D1E52281A67100A7447B /* TagCollectionView */ = {
+			isa = PBXGroup;
+			children = (
+				1C36D1E62281A69600A7447B /* TagCollectionView.swift */,
+				1C36D1E82281A87A00A7447B /* CollectionViewFlowLayout.swift */,
+			);
+			path = TagCollectionView;
+			sourceTree = "<group>";
+		};
+		1C36D1EA2281A90F00A7447B /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				1C36D1E52281A67100A7447B /* TagCollectionView */,
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
 		1C736E5A227F43AF00012954 = {
 			isa = PBXGroup;
 			children = (
@@ -218,6 +267,7 @@
 		1C736E65227F43AF00012954 /* Facts */ = {
 			isa = PBXGroup;
 			children = (
+				1C36D1EA2281A90F00A7447B /* Utils */,
 				1CB59B0F227F54B4002F2807 /* Models */,
 				1CB59B04227F4FDB002F2807 /* Components */,
 				1CB59AE9227F49AA002F2807 /* Modules */,
@@ -333,6 +383,7 @@
 		1CB59B04227F4FDB002F2807 /* Components */ = {
 			isa = PBXGroup;
 			children = (
+				1C36D1E022819DF400A7447B /* CollectionViewCell */,
 				1CB59B3B227F6B05002F2807 /* BaseViewController */,
 				1CB59B1F227F5D72002F2807 /* Services */,
 				1CB59B1B227F5BE9002F2807 /* Extension */,
@@ -345,6 +396,7 @@
 		1CB59B05227F4FE8002F2807 /* TableViewCells */ = {
 			isa = PBXGroup;
 			children = (
+				1C36D1DB22819CD800A7447B /* TagCloud */,
 				1CB59B6B227FCB6D002F2807 /* SearchItem */,
 				1CB59B66227FC8FD002F2807 /* Header */,
 				1CB59B65227FC8F3002F2807 /* Card */,
@@ -384,6 +436,7 @@
 				1CB59B26227F5F58002F2807 /* JSONDecoderGuide.swift */,
 				1CB59B42227F80C5002F2807 /* ColorGuide.swift */,
 				1CB59B4B227F8A60002F2807 /* DataGuide.swift */,
+				1C36D1EB2281A9D700A7447B /* StringGuide.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -651,6 +704,8 @@
 				1C736E74227F43B000012954 /* LaunchScreen.storyboard in Resources */,
 				1CB59B02227F4D38002F2807 /* facts.json in Resources */,
 				1CB59AF8227F4AE9002F2807 /* Configuration.plist in Resources */,
+				1C36D1DF22819D0400A7447B /* TagCloudCell.xib in Resources */,
+				1C36D1E422819E1500A7447B /* TagCell.xib in Resources */,
 				1CB59B3F227F6B22002F2807 /* LoadingView.xib in Resources */,
 				1CB59B6F227FCB8F002F2807 /* SearchItemCell.xib in Resources */,
 				1CB59B5F227FC878002F2807 /* Search.storyboard in Resources */,
@@ -838,16 +893,19 @@
 				1CB59B61227FC878002F2807 /* SearchProtocols.swift in Sources */,
 				1CB59B3A227F6735002F2807 /* FactsDetailWireframe.swift in Sources */,
 				1CB59B23227F5DA2002F2807 /* RequestConfig.swift in Sources */,
+				1C36D1EC2281A9D700A7447B /* StringGuide.swift in Sources */,
 				1CB59B62227FC878002F2807 /* SearchInteractor.swift in Sources */,
 				1CB59B1D227F5C3E002F2807 /* UIFontGuide.swift in Sources */,
 				1CB59B4D227F8C54002F2807 /* FactsContent.swift in Sources */,
 				1CB59B08227F5008002F2807 /* FactsCardCell.swift in Sources */,
+				1C36D1DE22819D0400A7447B /* TagCloudCell.swift in Sources */,
 				1CB59AF2227F49C8002F2807 /* FactsCollectionPresenter.swift in Sources */,
 				1CB59B25227F5F2B002F2807 /* ResponseData.swift in Sources */,
 				1CB59B0D227F52EB002F2807 /* MainWireframe.swift in Sources */,
 				1CB59B64227FC878002F2807 /* SearchWireframe.swift in Sources */,
 				1CB59B37227F6735002F2807 /* FactsDetailProtocols.swift in Sources */,
 				1CB59B69227FC91A002F2807 /* HeaderCell.swift in Sources */,
+				1C36D1E92281A87A00A7447B /* CollectionViewFlowLayout.swift in Sources */,
 				1CB59B21227F5D84002F2807 /* ApiService.swift in Sources */,
 				1CB59AF5227F49C8002F2807 /* FactsCollectionView.swift in Sources */,
 				1CB59AF6227F49C8002F2807 /* FactsCollectionWireframe.swift in Sources */,
@@ -858,9 +916,11 @@
 				1CB59AF4227F49C8002F2807 /* FactsCollectionInteractor.swift in Sources */,
 				1CB59AF3227F49C8002F2807 /* FactsCollectionProtocols.swift in Sources */,
 				1CB59B3E227F6B22002F2807 /* BaseView.swift in Sources */,
+				1C36D1E322819E1500A7447B /* TagCell.swift in Sources */,
 				1CB59B4C227F8A60002F2807 /* DataGuide.swift in Sources */,
 				1CB59B60227FC878002F2807 /* SearchPresenter.swift in Sources */,
 				1CB59B39227F6735002F2807 /* FactsDetailView.swift in Sources */,
+				1C36D1E72281A69600A7447B /* TagCollectionView.swift in Sources */,
 				1CB59B2B227F6274002F2807 /* Endpoints.swift in Sources */,
 				1CB59B27227F5F58002F2807 /* JSONDecoderGuide.swift in Sources */,
 			);
