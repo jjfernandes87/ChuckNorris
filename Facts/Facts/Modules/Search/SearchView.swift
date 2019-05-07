@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import SelfTableViewManager
 
 class SearchView: BaseView {
     
@@ -57,5 +58,15 @@ extension SearchView: UISearchBarDelegate {
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
         guard let text = searchBar.text else { return }
         self.presenter.searchBarSearch(text)
+    }
+}
+
+// MARK: - TableViewManagerDelegate
+extension SearchView: TableViewManagerDelegate {
+    func tableViewManager(table: SelfTableViewManager, didSelectRow row: CellController, atSection section: SectionController?) {
+        switch row {
+        case (is SearchItemCell): self.presenter.searchBarSearch((row as! SearchItemCell).title)
+        default: break
+        }
     }
 }

@@ -9,13 +9,19 @@
 import UIKit
 import SelfTableViewManager
 
+protocol TagDelegate: class {
+    func selectedTag(_ tag: String)
+}
+
 @objc(TagCloudCell)
 class TagCloudCell: CellController {
     
     var tags: [String]
+    weak var delegate: TagDelegate?
     
-    init(tags: [String]) {
+    init(tags: [String], delegate: TagDelegate? = nil) {
         self.tags = tags
+        self.delegate = delegate
         super.init()
     }
     
@@ -53,7 +59,7 @@ extension TagCloudCell: UICollectionViewDelegateFlowLayout {
 // MARK: - UICollectionViewDelegate
 extension TagCloudCell: UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        print(indexPath.item)
+        self.delegate?.selectedTag(self.tags[indexPath.item])
     }
 }
 

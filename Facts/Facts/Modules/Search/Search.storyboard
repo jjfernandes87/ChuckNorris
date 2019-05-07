@@ -9,7 +9,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Search View-->
+        <!--Manager Protocol-->
         <scene sceneID="0yJ-gf-T5z">
             <objects>
                 <viewController storyboardIdentifier="SearchView" id="2aj-bM-ixw" customClass="SearchView" customModule="Facts" customModuleProvider="target" sceneMemberID="viewController">
@@ -24,6 +24,9 @@
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" keyboardDismissMode="onDrag" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Zg3-Aa-wcg" customClass="SelfTableViewManager" customModule="SelfTableViewManager">
                                 <rect key="frame" x="0.0" y="64" width="375" height="603"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <connections>
+                                    <outlet property="managerProtocol" destination="2aj-bM-ixw" id="nGg-Sk-HcD"/>
+                                </connections>
                             </tableView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>

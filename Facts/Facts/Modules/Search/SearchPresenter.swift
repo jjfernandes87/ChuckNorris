@@ -22,9 +22,10 @@ class SearchPresenter: NSObject {
 // MARK: - SearchPresenterInputProtocol
 extension SearchPresenter: SearchPresenterInputProtocol {
     func viewDidLoad() {
+        let tags = ["games", "sports", "dev", "science", "technology", "music", "travel", "carrer"]
         var rows = [AnyObject]()
         rows.append(HeaderCell(title: "Sugestões"))
-        rows.append(TagCloudCell(tags: ["games", "sports", "dev", "science", "technology", "music", "travel", "carrer"]))
+        rows.append(TagCloudCell(tags: tags, delegate: self))
         rows.append(HeaderCell(title: "Ultimas buscas"))
         rows.append(SearchItemCell(title: "Star Wars"))
         rows.append(SearchItemCell(title: "Github"))
@@ -38,11 +39,18 @@ extension SearchPresenter: SearchPresenterInputProtocol {
     }
     
     func searchBarSearch(_ text: String) {
-        
+        print("searchBarSearch: \(text)")
     }
 }
 
 // MARK: - SearchInteractorOutputProtocol
 extension SearchPresenter: SearchInteractorOutputProtocol {
     
+}
+
+// MARK: - TagDelegate
+extension SearchPresenter: TagDelegate {
+    func selectedTag(_ tag: String) {
+       print("selectedTag: \(tag)")
+    }
 }
