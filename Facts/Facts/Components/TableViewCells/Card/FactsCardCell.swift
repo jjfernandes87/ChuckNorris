@@ -85,9 +85,8 @@ class FactsCardCellView: CellView {
         self.content.layer.shadowOpacity = 0.6
         self.content.layer.shadowColor = UIColor.gray.cgColor
         self.content.layer.cornerRadius = 20
-        
-        collection.register(UINib(nibName: "TagCell", bundle: nil), forCellWithReuseIdentifier: "TagCell")
-        collection.invalidateIntrinsicContentSize()
+        self.collection.register(UINib(nibName: "TagCell", bundle: nil), forCellWithReuseIdentifier: "TagCell")
+        self.collection.invalidateIntrinsicContentSize()
     }
     
     override func setHighlighted(_ highlighted: Bool, animated: Bool) {
