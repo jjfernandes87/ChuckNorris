@@ -8,27 +8,51 @@
 
 import UIKit
 
-class FactsCollectionInteractor: NSObject, FactsCollectionInteractorInputProtocol {
+class FactsCollectionInteractor: NSObject {
 
 	// MARK: - Viper Module Properties
-
     weak var output: FactsCollectionInteractorOutputProtocol?
+    
+}
 
-	// MARK: - FactsCollectionInteractorInputProtocol
+// MARK: - FactsCollectionInteractorInputProtocol
+extension FactsCollectionInteractor: FactsCollectionInteractorInputProtocol {
     func downloadData() {
         let config = RequestService.request(tag: URLEndpoints.facts.rawValue, parameters: ["query": "facts"])
         ApiService.request(config: config, success: { (statusCode, response) in
-            
             guard let contract = JSONDecoder.decode(FactsData.self, from: response) else {
                 self.output?.facts(GenericsError.unknown)
                 return
             }
-            
             self.output?.facts(contract.data.result)
-            
         }) { (statusCode, error) in
             self.output?.facts(GenericsError.unknown)
         }
     }
     
+    func downloadBySearch(_ text: String) {
+        let config = RequestService.request(tag: URLEndpoints.facts.rawValue, parameters: ["query": text])
+        ApiService.request(config: config, success: { (statusCode, response) in
+            guard let contract = JSONDecoder.decode(FactsData.self, from: response) else {
+                self.output?.facts(GenericsError.unknown)
+                return
+            }
+            self.output?.facts(contract.data.result)
+        }) { (statusCode, error) in
+            self.output?.facts(GenericsError.unknown)
+        }
+    }
+    
+    func downloadByCategory(_ category: String) {
+        let config = RequestService.request(tag: URLEndpoints.categoriesFacts.rawValue, parameters: ["category": category])
+        ApiService.request(config: config, success: { (statusCode, response) in
+            guard let contract = JSONDecoder.decode(CategotyFact.self, from: response) else {
+                self.output?.facts(GenericsError.unknown)
+                return
+            }
+            self.output?.facts([contract.data])
+        }) { (statusCode, error) in
+            self.output?.facts(GenericsError.unknown)
+        }
+    }
 }

@@ -11,3 +11,7 @@ import UIKit
 struct CategoriesContent: Codable {
     let data: [String]
 }
+
+struct CategotyFact: Codable {
+    let data: Facts
+}

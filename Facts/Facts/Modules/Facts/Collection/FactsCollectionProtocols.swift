@@ -12,13 +12,15 @@ import Foundation
 
 protocol FactsCollectionWireframeProtocol: class {
     func showDetail(_ content: Facts)
-    func showSearch()
+    func showSearch(delegate: SearchOutputProtocol)
 }
 
 // MARK: - Interactor
 
 protocol FactsCollectionInteractorInputProtocol {
     func downloadData()
+    func downloadBySearch(_ text: String)
+    func downloadByCategory(_ category: String)
 }
 
 // MARK: - Presenter

@@ -25,7 +25,7 @@ protocol SearchInteractorInputProtocol {
 protocol SearchPresenterInputProtocol: class {
     func viewDidLoad()
     func searchBarCancelButtonClicked()
-    func searchBarSearch(_ text: String)
+    func searchBar(_ text: String)
 }
 
 protocol SearchInteractorOutputProtocol: class {
@@ -37,4 +37,11 @@ protocol SearchInteractorOutputProtocol: class {
 
 protocol SearchPresenterOutputProtocol: class {
     func setRows(_ rows: [AnyObject])
+}
+
+// MARK: - Delegate
+
+protocol SearchOutputProtocol: class {
+    func searchBar(_ text: String)
+    func selectedCategory(_ category: String)
 }

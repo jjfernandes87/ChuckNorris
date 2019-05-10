@@ -20,12 +20,12 @@ class SearchWireframe: NSObject, SearchWireframeProtocol {
 
 	// MARK: - Constructors
 
-	override init() {
+	init(delegate: SearchOutputProtocol) {
 		super.init()
 
 		let view = self.viewControllerFromStoryboard(SearchView.self)  as! SearchView
 		let interactor = SearchInteractor()
-		let presenter = SearchPresenter()
+		let presenter = SearchPresenter(delegate: delegate)
 
 		presenter.interactor = interactor
 		presenter.wireframe = self

@@ -12,9 +12,15 @@ class SearchPresenter: NSObject {
 
 	// MARK: - Viper Module Properties
     weak var view: SearchPresenterOutputProtocol!
+    weak var delegate: SearchOutputProtocol?
     var interactor: SearchInteractorInputProtocol!
     var wireframe: SearchWireframeProtocol!
-
+    
+    init(delegate: SearchOutputProtocol) {
+        self.delegate = delegate
+        super.init()
+    }
+    
 	// MARK: - Private Methods
 
 }
@@ -29,8 +35,9 @@ extension SearchPresenter: SearchPresenterInputProtocol {
         self.wireframe.dismissSearchBar()
     }
     
-    func searchBarSearch(_ text: String) {
-        print("searchBarSearch: \(text)")
+    func searchBar(_ text: String) {
+        self.delegate?.searchBar(text)
+        self.searchBarCancelButtonClicked()
     }
 }
 
@@ -57,6 +64,7 @@ extension SearchPresenter: SearchInteractorOutputProtocol {
 // MARK: - TagDelegate
 extension SearchPresenter: TagDelegate {
     func selectedTag(_ tag: String) {
-       print("selectedTag: \(tag)")
+        self.delegate?.selectedCategory(tag)
+        self.searchBarCancelButtonClicked()
     }
 }

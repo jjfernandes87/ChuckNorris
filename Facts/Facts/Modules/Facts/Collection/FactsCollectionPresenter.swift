@@ -11,10 +11,10 @@ import UIKit
 class FactsCollectionPresenter: NSObject {
 
 	// MARK: - Viper Module Properties
-
     weak var view: FactsCollectionPresenterOutputProtocol!
     var interactor: FactsCollectionInteractorInputProtocol!
     var wireframe: FactsCollectionWireframeProtocol!
+    var firstLoad = true
 
     // MARK: - Private Methods
     func loadCells(_ collection: [Facts]) {
@@ -31,6 +31,8 @@ extension FactsCollectionPresenter: FactsCollectionPresenterInputProtocol {
     }
     
     func viewWillAppear() {
+        if firstLoad == false { return }
+        self.firstLoad = false
         self.interactor.downloadData()
     }
     
@@ -39,7 +41,7 @@ extension FactsCollectionPresenter: FactsCollectionPresenterInputProtocol {
     }
     
     func didSearchButton() {
-        self.wireframe.showSearch()
+        self.wireframe.showSearch(delegate: self)
     }
 }
 
@@ -58,5 +60,16 @@ extension FactsCollectionPresenter: FactsCollectionInteractorOutputProtocol {
 extension FactsCollectionPresenter: FactsCardCellDelegate {
     func sharedFact(_ content: Facts) {
         SharedContent.sharedContent(urlShare: content.url, title: "Chuck Norris Fact", message: content.value)
+    }
+}
+
+// MARK: - SearchOutputProtocol
+extension FactsCollectionPresenter: SearchOutputProtocol {
+    func searchBar(_ text: String) {
+        self.interactor.downloadBySearch(text)
+    }
+    
+    func selectedCategory(_ category: String) {
+        self.interactor.downloadByCategory(category)
     }
 }
