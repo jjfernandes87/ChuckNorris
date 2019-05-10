@@ -17,7 +17,7 @@ protocol SearchWireframeProtocol: class {
 // MARK: - Interactor
 
 protocol SearchInteractorInputProtocol {
-
+    func downloadData()
 }
 
 // MARK: - Presenter
@@ -29,7 +29,8 @@ protocol SearchPresenterInputProtocol: class {
 }
 
 protocol SearchInteractorOutputProtocol: class {
-
+    func categories(_ categories: [String])
+    func categories(_ error: GenericsError)
 }
 
 // MARK: - View

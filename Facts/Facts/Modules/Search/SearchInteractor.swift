@@ -14,6 +14,18 @@ class SearchInteractor: NSObject, SearchInteractorInputProtocol {
     weak var output: SearchInteractorOutputProtocol?
 
 	// MARK: - SearchInteractorInputProtocol
+    func downloadData() {
+        let config = RequestService.request(tag: URLEndpoints.categories.rawValue)
+        ApiService.request(config: config, success: { (statusCode, response) in
+            guard let contract = JSONDecoder.decode(CategoriesContent.self, from: response) else {
+                self.output?.categories(GenericsError.unknown)
+                return
+            }
+            self.output?.categories(contract.data)
+        }) { (statusCode, error) in
+            self.output?.categories(GenericsError.unknown)
+        }
+    }
 
     // MARK: - Private Methods
 

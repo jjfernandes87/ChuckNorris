@@ -22,16 +22,7 @@ class SearchPresenter: NSObject {
 // MARK: - SearchPresenterInputProtocol
 extension SearchPresenter: SearchPresenterInputProtocol {
     func viewDidLoad() {
-        let tags = ["games", "sports", "dev", "science", "technology", "music", "travel", "carrer"]
-        var rows = [AnyObject]()
-        rows.append(HeaderCell(title: "Sugestões"))
-        rows.append(TagCloudCell(tags: tags, delegate: self))
-        rows.append(HeaderCell(title: "Ultimas buscas"))
-        rows.append(SearchItemCell(title: "Star Wars"))
-        rows.append(SearchItemCell(title: "Github"))
-        rows.append(SearchItemCell(title: "Dumb"))
-        rows.append(SearchItemCell(title: "Trump"))
-        self.view.setRows(rows)
+        self.interactor.downloadData()
     }
     
     func searchBarCancelButtonClicked() {
@@ -45,6 +36,21 @@ extension SearchPresenter: SearchPresenterInputProtocol {
 
 // MARK: - SearchInteractorOutputProtocol
 extension SearchPresenter: SearchInteractorOutputProtocol {
+    func categories(_ categories: [String]) {
+        var rows = [AnyObject]()
+        rows.append(HeaderCell(title: "Sugestões"))
+        rows.append(TagCloudCell(tags: categories, delegate: self))
+        rows.append(HeaderCell(title: "Ultimas buscas"))
+        rows.append(SearchItemCell(title: "Star Wars"))
+        rows.append(SearchItemCell(title: "Github"))
+        rows.append(SearchItemCell(title: "Dumb"))
+        rows.append(SearchItemCell(title: "Trump"))
+        self.view.setRows(rows)
+    }
+    
+    func categories(_ error: GenericsError) {
+        print(error.localizedDescription)
+    }
     
 }
 
