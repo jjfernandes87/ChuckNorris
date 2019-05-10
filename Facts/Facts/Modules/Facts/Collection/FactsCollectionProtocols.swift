@@ -27,7 +27,6 @@ protocol FactsCollectionInteractorInputProtocol {
 
 protocol FactsCollectionPresenterInputProtocol: class {
     func viewDidLoad()
-    func viewWillAppear()
     func didSearchButton()
     func didSelectFact(_ content: Facts)
 }
@@ -41,5 +40,5 @@ protocol FactsCollectionInteractorOutputProtocol: class {
 
 protocol FactsCollectionPresenterOutputProtocol: class {
     func setRows(_ rows: [AnyObject])
-    func setLoadingView()
+    func setLoadingView(animate: Bool)
 }

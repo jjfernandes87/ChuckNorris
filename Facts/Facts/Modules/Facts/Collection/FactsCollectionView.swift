@@ -25,11 +25,6 @@ class FactsCollectionView: BaseView {
         self.presenter.viewDidLoad()
     }
 
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-        self.presenter.viewWillAppear()
-    }
-    
     override func showPresenting() {
         super.showPresenting()
         
@@ -64,8 +59,8 @@ extension FactsCollectionView: FactsCollectionPresenterOutputProtocol {
         self.setViewStatus((rows.count > 0) ? BaseStatus.presenting : BaseStatus.noContent, animated: false)
     }
     
-    func setLoadingView() {
-        self.setViewStatus(.loading)
+    func setLoadingView(animate: Bool) {
+        self.setViewStatus(.loading, animated: animate)
     }
 }
 

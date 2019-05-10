@@ -14,7 +14,6 @@ class FactsCollectionPresenter: NSObject {
     weak var view: FactsCollectionPresenterOutputProtocol!
     var interactor: FactsCollectionInteractorInputProtocol!
     var wireframe: FactsCollectionWireframeProtocol!
-    var firstLoad = true
 
     // MARK: - Private Methods
     func loadCells(_ collection: [Facts]) {
@@ -22,18 +21,21 @@ class FactsCollectionPresenter: NSObject {
         collection.forEach { (item) in rows.append(FactsCardCell(content: item, delegate: self)) }
         self.view.setRows(rows)
     }
+    
+    private func setLoading(animate: Bool = true, callback: @escaping () -> Void) {
+        self.view.setLoadingView(animate: animate)
+        callback()
+    }
 }
 
 // MARK: - FactsCollectionPresenterInputProtocol
 extension FactsCollectionPresenter: FactsCollectionPresenterInputProtocol {
     func viewDidLoad() {
-        self.view.setLoadingView()
-    }
-    
-    func viewWillAppear() {
-        if firstLoad == false { return }
-        self.firstLoad = false
-        self.interactor.downloadData()
+        self.setLoading {
+            DispatchQueue.main.asyncAfter(deadline: .now() + 1, execute: {
+                self.interactor.downloadData()
+            })
+        }
     }
     
     func didSelectFact(_ content: Facts) {
@@ -66,12 +68,14 @@ extension FactsCollectionPresenter: FactsCardCellDelegate {
 // MARK: - SearchOutputProtocol
 extension FactsCollectionPresenter: SearchOutputProtocol {
     func searchBar(_ text: String) {
-        self.view.setLoadingView()
-        self.interactor.downloadBySearch(text)
+        self.setLoading(animate: false) {
+            self.interactor.downloadBySearch(text)
+        }
     }
     
     func selectedCategory(_ category: String) {
-        self.view.setLoadingView()
-        self.interactor.downloadByCategory(category)
+        self.setLoading(animate: false) {
+            self.interactor.downloadByCategory(category)
+        }
     }
 }
