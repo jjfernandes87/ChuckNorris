@@ -45,6 +45,7 @@ class FactsCollectionView: BaseView {
     private func setupScreen() {
         self.tableView.managerProtocol = self
         self.topLayout.constant = UIScreen.main.bounds.height
+        self.view.backgroundColor = .groupTableViewBackground
     }
     
     @IBAction func searchAction() {

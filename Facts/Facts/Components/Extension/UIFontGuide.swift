@@ -11,11 +11,11 @@ import UIKit
 extension UIFont {
     
     @nonobjc class var h1: UIFont {
-        return UIFont.systemFont(ofSize: 24)
+        return UIFont.systemFont(ofSize: 32)
     }
     
     @nonobjc class var h2: UIFont {
-        return UIFont.systemFont(ofSize: 16)
+        return UIFont.systemFont(ofSize: 24)
     }
     
     @nonobjc class var h3: UIFont {

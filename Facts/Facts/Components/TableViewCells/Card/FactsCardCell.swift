@@ -39,6 +39,7 @@ class FactsCardCell: CellController {
     private func font() -> UIFont {
         return self.model.value.count >= 80 ? .h2 : .h1
     }
+    
 }
 
 // MARK: - Actions
@@ -56,8 +57,11 @@ class FactsCardCellView: CellView {
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        self.content.layer.borderWidth = 2
-        self.content.layer.borderColor = UIColor.groupTableViewBackground.cgColor
+        self.content.layer.shadowRadius = 14
+        self.content.layer.shadowOpacity = 0.6
+        self.content.layer.shadowColor = UIColor.gray.cgColor
+        self.content.layer.cornerRadius = 20
+        
         self.tagLabel.backgroundColor = .blue
         self.tagLabel.font = .h2
         self.tagLabel.textColor = .white
@@ -66,6 +70,15 @@ class FactsCardCellView: CellView {
     
     override func setHighlighted(_ highlighted: Bool, animated: Bool) {
         super.setHighlighted(highlighted, animated: animated)
-        self.content.backgroundColor = highlighted ? .groupTableViewBackground : .clear
+        highlighted ? self.shrinkAnimated() : self.resetAnimated()
+    }
+    
+    //MARK: - Animations
+    private func shrinkAnimated() {
+        UIView.animate(withDuration: 0.2, animations: { self.content.transform = CGAffineTransform(scaleX: 0.95, y: 0.95) })
+    }
+    
+    private func resetAnimated() {
+        UIView.animate(withDuration: 0.2, animations: { self.content.transform = CGAffineTransform.identity })
     }
 }
