@@ -21,4 +21,9 @@ struct Facts: Codable {
     let category: [String]?
     let url: URL
     let value: String
+    
+    func categoryArray() -> [String] {
+        guard let category = category else { return ["UNCATEGORIZED"] }
+        return category
+    }
 }

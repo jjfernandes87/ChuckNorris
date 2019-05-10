@@ -70,6 +70,5 @@ class TagCloudCellView: CellView {
         super.awakeFromNib()
         collection.register(UINib(nibName: "TagCell", bundle: nil), forCellWithReuseIdentifier: "TagCell")
         collection.invalidateIntrinsicContentSize()
-        
     }
 }

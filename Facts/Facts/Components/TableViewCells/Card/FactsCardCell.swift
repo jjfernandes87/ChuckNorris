@@ -32,7 +32,8 @@ class FactsCardCell: CellController {
         cell.sharedButton.isHidden = self.delegate == nil
         cell.factsLabel.text = self.model.value
         cell.factsLabel.font = self.font()
-        cell.tagLabel.text = self.model.category?.last?.uppercased() ?? "UNCATEGORIZED"
+        cell.collection.reloadData()
+        cell.collection.layoutIfNeeded()
         return cell
     }
     
@@ -40,6 +41,29 @@ class FactsCardCell: CellController {
         return self.model.value.count >= 80 ? .h2 : .h1
     }
     
+}
+
+// MARK: - UICollectionViewDataSource
+extension FactsCardCell: UICollectionViewDataSource {
+    
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return self.model.categoryArray().count
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "TagCell", for: indexPath) as! TagCell
+        cell.tagLabel.text = self.model.categoryArray()[indexPath.item].uppercased()
+        return cell
+    }
+    
+}
+
+// MARK: - UICollectionViewDelegateFlowLayout
+extension FactsCardCell: UICollectionViewDelegateFlowLayout {
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        let text = self.model.categoryArray()[indexPath.item].uppercased()
+        return CGSize(width: text.expectedLabelSize(font: .h3) + 20, height: 32)
+    }
 }
 
 // MARK: - Actions
@@ -51,7 +75,7 @@ class FactsCardCell: CellController {
 
 class FactsCardCellView: CellView {
     @IBOutlet weak var factsLabel: UILabel!
-    @IBOutlet weak var tagLabel: UILabel!
+    @IBOutlet weak var collection: TagCollectionView!
     @IBOutlet weak var sharedButton: UIButton!
     @IBOutlet weak var content: UIView!
     
@@ -62,10 +86,8 @@ class FactsCardCellView: CellView {
         self.content.layer.shadowColor = UIColor.gray.cgColor
         self.content.layer.cornerRadius = 20
         
-        self.tagLabel.backgroundColor = .blue
-        self.tagLabel.font = .h2
-        self.tagLabel.textColor = .white
-        self.tagLabel.textAlignment = .center
+        collection.register(UINib(nibName: "TagCell", bundle: nil), forCellWithReuseIdentifier: "TagCell")
+        collection.invalidateIntrinsicContentSize()
     }
     
     override func setHighlighted(_ highlighted: Bool, animated: Bool) {
