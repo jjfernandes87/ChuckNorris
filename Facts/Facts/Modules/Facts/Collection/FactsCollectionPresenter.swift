@@ -66,10 +66,12 @@ extension FactsCollectionPresenter: FactsCardCellDelegate {
 // MARK: - SearchOutputProtocol
 extension FactsCollectionPresenter: SearchOutputProtocol {
     func searchBar(_ text: String) {
+        self.view.setLoadingView()
         self.interactor.downloadBySearch(text)
     }
     
     func selectedCategory(_ category: String) {
+        self.view.setLoadingView()
         self.interactor.downloadByCategory(category)
     }
 }
