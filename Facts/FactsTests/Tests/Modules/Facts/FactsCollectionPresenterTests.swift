@@ -31,11 +31,6 @@ class FactsCollectionPresenterSpec: QuickSpec {
                 expect(view.setLoadingViewBool).toEventually(equal(true))
             }
             
-            it("downloadData was called") {
-                presenter.viewWillAppear()
-                expect(interactor.downloadDataBool).toEventually(equal(true))
-            }
-            
             it("actions was called") {
                 presenter.didSearchButton()
                 expect(wireframe.showSearchBool).toEventually(equal(true))
@@ -46,35 +41,47 @@ class FactsCollectionPresenterSpec: QuickSpec {
 }
 
 class MockCollectionView: FactsCollectionPresenterOutputProtocol {
+    
     var setLoadingViewBool = false
+    
     var setRowsBool = false
     
     func setRows(_ rows: [AnyObject]) {
         self.setRowsBool = true
     }
     
-    func setLoadingView() {
+    func setLoadingView(animate: Bool) {
         self.setLoadingViewBool = true
     }
     
 }
 
 class MockInteractor: FactsCollectionInteractorInputProtocol {
+    
     var downloadDataBool = false
     
     func downloadData() {
         self.downloadDataBool = true
     }
+    
+    func downloadBySearch(_ text: String) {
+        
+    }
+    
+    func downloadByCategory(_ category: String) {
+        
+    }
 }
 
 class MockWireframe: FactsCollectionWireframeProtocol {
+    
     var showSearchBool = false
     
     func showDetail(_ content: Facts) {
         
     }
     
-    func showSearch() {
+    func showSearch(delegate: SearchOutputProtocol) {
         self.showSearchBool = true
     }
 }
