@@ -20,8 +20,6 @@ class SearchPresenter: NSObject {
         self.delegate = delegate
         super.init()
     }
-    
-	// MARK: - Private Methods
 
 }
 
@@ -37,28 +35,30 @@ extension SearchPresenter: SearchPresenterInputProtocol {
     
     func searchBar(_ text: String) {
         self.delegate?.searchBar(text)
+        self.interactor.searchBar(text)
         self.searchBarCancelButtonClicked()
     }
 }
 
 // MARK: - SearchInteractorOutputProtocol
 extension SearchPresenter: SearchInteractorOutputProtocol {
-    func categories(_ categories: [String]) {
+    func searchData(categories: [String], latestSearch: [String]) {
         var rows = [AnyObject]()
-        rows.append(HeaderCell(title: "Sugestões"))
-        rows.append(TagCloudCell(tags: categories, delegate: self))
-        rows.append(HeaderCell(title: "Ultimas buscas"))
-        rows.append(SearchItemCell(title: "Star Wars"))
-        rows.append(SearchItemCell(title: "Github"))
-        rows.append(SearchItemCell(title: "Dumb"))
-        rows.append(SearchItemCell(title: "Trump"))
+        
+        if categories.count > 0 {
+            rows.append(HeaderCell(title: "Sugestões"))
+            rows.append(TagCloudCell(tags: categories, delegate: self))
+        }
+        
+        if latestSearch.count > 0 {
+            rows.append(HeaderCell(title: "Ultimas buscas"))
+            latestSearch.forEach { (term) in
+                rows.append(SearchItemCell(title: term))
+            }
+        }
+        
         self.view.setRows(rows)
     }
-    
-    func categories(_ error: GenericsError) {
-        print(error.localizedDescription)
-    }
-    
 }
 
 // MARK: - TagDelegate

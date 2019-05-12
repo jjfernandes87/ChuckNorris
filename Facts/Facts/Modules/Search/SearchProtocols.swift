@@ -18,6 +18,7 @@ protocol SearchWireframeProtocol: class {
 
 protocol SearchInteractorInputProtocol {
     func downloadData()
+    func searchBar(_ term: String)
 }
 
 // MARK: - Presenter
@@ -29,8 +30,7 @@ protocol SearchPresenterInputProtocol: class {
 }
 
 protocol SearchInteractorOutputProtocol: class {
-    func categories(_ categories: [String])
-    func categories(_ error: GenericsError)
+    func searchData(categories: [String], latestSearch: [String])
 }
 
 // MARK: - View
