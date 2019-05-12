@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		1C30B92B2288481A009B6AD9 /* LatestSearchCoreDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C30B92A2288481A009B6AD9 /* LatestSearchCoreDataModel.swift */; };
 		1C30B92E22885274009B6AD9 /* AppSequence.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C30B92D22885274009B6AD9 /* AppSequence.swift */; };
+		1C30B93022885646009B6AD9 /* RequestGuide.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C30B92F22885646009B6AD9 /* RequestGuide.swift */; };
 		1C36D1DE22819D0400A7447B /* TagCloudCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C36D1DC22819D0400A7447B /* TagCloudCell.swift */; };
 		1C36D1DF22819D0400A7447B /* TagCloudCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1C36D1DD22819D0400A7447B /* TagCloudCell.xib */; };
 		1C36D1E322819E1500A7447B /* TagCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C36D1E122819E1500A7447B /* TagCell.swift */; };
@@ -99,6 +100,7 @@
 		05B9DB8E92DAD1C8320705B4 /* Pods-FactsTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FactsTests.release.xcconfig"; path = "Target Support Files/Pods-FactsTests/Pods-FactsTests.release.xcconfig"; sourceTree = "<group>"; };
 		1C30B92A2288481A009B6AD9 /* LatestSearchCoreDataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LatestSearchCoreDataModel.swift; sourceTree = "<group>"; };
 		1C30B92D22885274009B6AD9 /* AppSequence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppSequence.swift; sourceTree = "<group>"; };
+		1C30B92F22885646009B6AD9 /* RequestGuide.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestGuide.swift; sourceTree = "<group>"; };
 		1C36D1DC22819D0400A7447B /* TagCloudCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TagCloudCell.swift; sourceTree = "<group>"; };
 		1C36D1DD22819D0400A7447B /* TagCloudCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TagCloudCell.xib; sourceTree = "<group>"; };
 		1C36D1E122819E1500A7447B /* TagCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TagCell.swift; sourceTree = "<group>"; };
@@ -466,6 +468,7 @@
 				1CB59B42227F80C5002F2807 /* ColorGuide.swift */,
 				1CB59B4B227F8A60002F2807 /* DataGuide.swift */,
 				1C36D1EB2281A9D700A7447B /* StringGuide.swift */,
+				1C30B92F22885646009B6AD9 /* RequestGuide.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -946,6 +949,7 @@
 				1C30B92E22885274009B6AD9 /* AppSequence.swift in Sources */,
 				1CB59AF6227F49C8002F2807 /* FactsCollectionWireframe.swift in Sources */,
 				1CB59B6E227FCB8F002F2807 /* SearchItemCell.swift in Sources */,
+				1C30B93022885646009B6AD9 /* RequestGuide.swift in Sources */,
 				1CB59B29227F6018002F2807 /* RequestService.swift in Sources */,
 				1CB59B43227F80C5002F2807 /* ColorGuide.swift in Sources */,
 				1C736E67227F43AF00012954 /* AppDelegate.swift in Sources */,

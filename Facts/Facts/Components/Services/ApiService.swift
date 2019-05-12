@@ -26,6 +26,7 @@ class ApiService: NSObject {
             encoding: config.parametersEncoding!,
             headers: nil
         ).validate(statusCode: 200..<300)
+        .debugLog()
         .responseString(encoding: String.Encoding.utf8) { (response) in
             
             if let data = JSONDecoder.decode(ResponseData.self, from: response.value),

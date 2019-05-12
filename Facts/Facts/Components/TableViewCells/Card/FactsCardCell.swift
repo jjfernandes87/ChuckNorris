@@ -32,8 +32,9 @@ class FactsCardCell: CellController {
         cell.sharedButton.isHidden = self.delegate == nil
         cell.factsLabel.text = self.model.value
         cell.factsLabel.font = self.font()
+        cell.collection.dataSource = self
+        cell.collection.delegate = self
         cell.collection.reloadData()
-        cell.collection.layoutIfNeeded()
         return cell
     }
     
