@@ -262,6 +262,7 @@
 		1C36D1EA2281A90F00A7447B /* Utils */ = {
 			isa = PBXGroup;
 			children = (
+				1CB59B1B227F5BE9002F2807 /* Extension */,
 				1C36D1E52281A67100A7447B /* TagCollectionView */,
 			);
 			path = Utils;
@@ -413,7 +414,6 @@
 				1C36D1E022819DF400A7447B /* CollectionViewCell */,
 				1CB59B3B227F6B05002F2807 /* BaseViewController */,
 				1CB59B1F227F5D72002F2807 /* Services */,
-				1CB59B1B227F5BE9002F2807 /* Extension */,
 				1CB59B17227F5AB4002F2807 /* SharedContent */,
 				1CB59B05227F4FE8002F2807 /* TableViewCells */,
 			);
