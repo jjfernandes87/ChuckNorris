@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1C30B92B2288481A009B6AD9 /* LatestSearchCoreDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C30B92A2288481A009B6AD9 /* LatestSearchCoreDataModel.swift */; };
+		1C30B92E22885274009B6AD9 /* AppSequence.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C30B92D22885274009B6AD9 /* AppSequence.swift */; };
 		1C36D1DE22819D0400A7447B /* TagCloudCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C36D1DC22819D0400A7447B /* TagCloudCell.swift */; };
 		1C36D1DF22819D0400A7447B /* TagCloudCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1C36D1DD22819D0400A7447B /* TagCloudCell.xib */; };
 		1C36D1E322819E1500A7447B /* TagCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C36D1E122819E1500A7447B /* TagCell.swift */; };
@@ -95,6 +97,8 @@
 
 /* Begin PBXFileReference section */
 		05B9DB8E92DAD1C8320705B4 /* Pods-FactsTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FactsTests.release.xcconfig"; path = "Target Support Files/Pods-FactsTests/Pods-FactsTests.release.xcconfig"; sourceTree = "<group>"; };
+		1C30B92A2288481A009B6AD9 /* LatestSearchCoreDataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LatestSearchCoreDataModel.swift; sourceTree = "<group>"; };
+		1C30B92D22885274009B6AD9 /* AppSequence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppSequence.swift; sourceTree = "<group>"; };
 		1C36D1DC22819D0400A7447B /* TagCloudCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TagCloudCell.swift; sourceTree = "<group>"; };
 		1C36D1DD22819D0400A7447B /* TagCloudCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TagCloudCell.xib; sourceTree = "<group>"; };
 		1C36D1E122819E1500A7447B /* TagCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TagCell.swift; sourceTree = "<group>"; };
@@ -210,6 +214,22 @@
 				CE68C48FAE01219C097F81DF /* Pods_FactsTests.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		1C30B929228847BD009B6AD9 /* CoreData */ = {
+			isa = PBXGroup;
+			children = (
+				1C30B92A2288481A009B6AD9 /* LatestSearchCoreDataModel.swift */,
+			);
+			path = CoreData;
+			sourceTree = "<group>";
+		};
+		1C30B92C22885259009B6AD9 /* LaunchApplication */ = {
+			isa = PBXGroup;
+			children = (
+				1C30B92D22885274009B6AD9 /* AppSequence.swift */,
+			);
+			path = LaunchApplication;
 			sourceTree = "<group>";
 		};
 		1C36D1DB22819CD800A7447B /* TagCloud */ = {
@@ -389,6 +409,7 @@
 		1CB59B04227F4FDB002F2807 /* Components */ = {
 			isa = PBXGroup;
 			children = (
+				1C30B92C22885259009B6AD9 /* LaunchApplication */,
 				1C36D1E022819DF400A7447B /* CollectionViewCell */,
 				1CB59B3B227F6B05002F2807 /* BaseViewController */,
 				1CB59B1F227F5D72002F2807 /* Services */,
@@ -413,6 +434,7 @@
 		1CB59B0F227F54B4002F2807 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				1C30B929228847BD009B6AD9 /* CoreData */,
 				1CB59B10227F54C1002F2807 /* Entities */,
 			);
 			path = Models;
@@ -779,6 +801,7 @@
 				"${PODS_ROOT}/Target Support Files/Pods-Facts-FactsUITests/Pods-Facts-FactsUITests-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
 				"${BUILT_PRODUCTS_DIR}/ConfigurationProvider/ConfigurationProvider.framework",
+				"${BUILT_PRODUCTS_DIR}/LaunchApplication/LaunchApplication.framework",
 				"${BUILT_PRODUCTS_DIR}/SelfTableViewManager/SelfTableViewManager.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
@@ -787,6 +810,7 @@
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ConfigurationProvider.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/LaunchApplication.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SelfTableViewManager.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -873,6 +897,7 @@
 				"${PODS_ROOT}/Target Support Files/Pods-Facts/Pods-Facts-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
 				"${BUILT_PRODUCTS_DIR}/ConfigurationProvider/ConfigurationProvider.framework",
+				"${BUILT_PRODUCTS_DIR}/LaunchApplication/LaunchApplication.framework",
 				"${BUILT_PRODUCTS_DIR}/SelfTableViewManager/SelfTableViewManager.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
@@ -881,6 +906,7 @@
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ConfigurationProvider.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/LaunchApplication.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SelfTableViewManager.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -917,12 +943,14 @@
 				1C36D1E92281A87A00A7447B /* CollectionViewFlowLayout.swift in Sources */,
 				1CB59B21227F5D84002F2807 /* ApiService.swift in Sources */,
 				1CB59AF5227F49C8002F2807 /* FactsCollectionView.swift in Sources */,
+				1C30B92E22885274009B6AD9 /* AppSequence.swift in Sources */,
 				1CB59AF6227F49C8002F2807 /* FactsCollectionWireframe.swift in Sources */,
 				1CB59B6E227FCB8F002F2807 /* SearchItemCell.swift in Sources */,
 				1CB59B29227F6018002F2807 /* RequestService.swift in Sources */,
 				1CB59B43227F80C5002F2807 /* ColorGuide.swift in Sources */,
 				1C736E67227F43AF00012954 /* AppDelegate.swift in Sources */,
 				1C6DC45522859B890080476C /* CategoriesContent.swift in Sources */,
+				1C30B92B2288481A009B6AD9 /* LatestSearchCoreDataModel.swift in Sources */,
 				1CB59AF4227F49C8002F2807 /* FactsCollectionInteractor.swift in Sources */,
 				1CB59AF3227F49C8002F2807 /* FactsCollectionProtocols.swift in Sources */,
 				1CB59B3E227F6B22002F2807 /* BaseView.swift in Sources */,
