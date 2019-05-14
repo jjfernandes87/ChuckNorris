@@ -80,3 +80,46 @@ Lib propria que permite que você crie diferentes schemes para sua aplicação e
 ###### Framework: LaunchApplication
 
 Lib propria que permite você criar uma sequencia de inicialização do seu app. Você remove metodos que poderiam ficar perdidos no AppDelegate e move para uma sequencia que você define. Tudo via array
+
+## Passo a passo de como rodar o projeto
+
+Antes de tudo você precisa instalar o Bundler. Bundler garante que todos os desenvolvedores que trabalhem no projeto usem as mesmas versões de serviços como Cocoapods e Fastlane.
+
+Abra o terminal e use o seguindo comando para instalar o Bundler:
+
+```
+gem install bundler
+```
+
+Para executar a aplicação, siga o comando abaixo::
+
+```
+cd Facts/
+bundle install
+```
+
+O ultimo comando instalará todas as dependencias necessárias para rodar a aplicação:
+
+```
+bundle exec pod install
+```
+
+## Passo a passo de como testar a aplicação
+
+Se você quiser rodar os testes localmente, basta usar o fastlane:
+
+```
+bundle exec fastlane tests
+```
+
+Se você quiser ver a cobertura de testes
+
+```
+bundle exec fastlane coverage
+```
+
+Se você quiser ver os screenshots
+
+```
+bundle exec fastlane screenshots
+```

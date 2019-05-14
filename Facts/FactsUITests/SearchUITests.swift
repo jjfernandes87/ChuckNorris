@@ -25,6 +25,7 @@ class SearchUITests: XCTestCase {
         let app = XCUIApplication()
         app.navigationBars["CHUCK NORRIS FACTS"].buttons["Search"].tap()
         XCTAssertTrue(app.navigationBars["Facts.SearchView"].buttons["Cancel"].exists, "did not show content")
+        snapshot("4Search")
     }
     
     func testShowTagCloud() {
