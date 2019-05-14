@@ -11,7 +11,6 @@ import UIKit
 class FactsCollectionPresenter: NSObject {
 
 	// MARK: - Viper Module Properties
-
     weak var view: FactsCollectionPresenterOutputProtocol!
     var interactor: FactsCollectionInteractorInputProtocol!
     var wireframe: FactsCollectionWireframeProtocol!
@@ -22,16 +21,21 @@ class FactsCollectionPresenter: NSObject {
         collection.forEach { (item) in rows.append(FactsCardCell(content: item, delegate: self)) }
         self.view.setRows(rows)
     }
+    
+    private func setLoading(animate: Bool = true, callback: @escaping () -> Void) {
+        self.view.setLoadingView(animate: animate)
+        callback()
+    }
 }
 
 // MARK: - FactsCollectionPresenterInputProtocol
 extension FactsCollectionPresenter: FactsCollectionPresenterInputProtocol {
     func viewDidLoad() {
-        self.view.setLoadingView()
-    }
-    
-    func viewWillAppear() {
-        self.interactor.downloadData()
+        self.setLoading {
+            DispatchQueue.main.asyncAfter(deadline: .now() + 1, execute: {
+                self.interactor.downloadData()
+            })
+        }
     }
     
     func didSelectFact(_ content: Facts) {
@@ -39,7 +43,7 @@ extension FactsCollectionPresenter: FactsCollectionPresenterInputProtocol {
     }
     
     func didSearchButton() {
-        self.wireframe.showSearch()
+        self.wireframe.showSearch(delegate: self)
     }
 }
 
@@ -58,5 +62,20 @@ extension FactsCollectionPresenter: FactsCollectionInteractorOutputProtocol {
 extension FactsCollectionPresenter: FactsCardCellDelegate {
     func sharedFact(_ content: Facts) {
         SharedContent.sharedContent(urlShare: content.url, title: "Chuck Norris Fact", message: content.value)
+    }
+}
+
+// MARK: - SearchOutputProtocol
+extension FactsCollectionPresenter: SearchOutputProtocol {
+    func searchBar(_ text: String) {
+        self.setLoading(animate: false) {
+            self.interactor.downloadBySearch(text)
+        }
+    }
+    
+    func selectedCategory(_ category: String) {
+        self.setLoading(animate: false) {
+            self.interactor.downloadByCategory(category)
+        }
     }
 }

@@ -43,8 +43,9 @@ class FactsCollectionWireframe: NSObject, FactsCollectionWireframeProtocol {
         self.view.navigationController?.pushViewController(view, animated: true)
     }
     
-    func showSearch() {
-        print("func showSearch()")
+    func showSearch(delegate: SearchOutputProtocol) {
+        guard let view = SearchWireframe(delegate: delegate).view else { return }
+        self.view.navigationController?.pushViewController(view, animated: true)
     }
 
 	// MARK: - Private methods

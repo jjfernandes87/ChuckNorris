@@ -8,16 +8,18 @@
 
 import UIKit
 import CoreData
+import LaunchApplication
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
     var mainRouter: MainWireframe?
+    var launchSequence = AppSequence()
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         self.initWindow()
-        self.preloadedXib()
+        self.launchSequence.launchWithDelegate(delegate: self)
         self.initMainRouter()
         return true
     }
@@ -27,7 +29,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
 
     // MARK: - Core Data stack
-
     lazy var persistentContainer: NSPersistentContainer = {
         let container = NSPersistentContainer(name: "Facts")
         container.loadPersistentStores(completionHandler: { (storeDescription, error) in
@@ -39,7 +40,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }()
 
     // MARK: - Core Data Saving support
-
     func saveContext () {
         let context = persistentContainer.viewContext
         if context.hasChanges {
@@ -54,7 +54,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 }
 
-extension AppDelegate {
+extension AppDelegate: LaunchApplicationProtocol {
+    
     func initWindow() {
         self.window = UIWindow(frame: UIScreen.main.bounds)
         self.window?.makeKeyAndVisible()
@@ -65,8 +66,7 @@ extension AppDelegate {
         self.mainRouter?.launch()
     }
     
-    func preloadedXib() {
-        preloadedLoadingXib = UINib(nibName: "LoadingView", bundle: Bundle.main)
-        preloadedNoContentXib = UINib(nibName: "NoContent", bundle: Bundle.main)
+    func didFinishLaunchSequence(application: LaunchApplication) {
+        print("didFinishLaunchSequence")
     }
 }

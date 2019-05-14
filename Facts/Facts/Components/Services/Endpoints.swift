@@ -10,5 +10,6 @@ import UIKit
 
 enum URLEndpoints: String {
     case facts = "facts"
+    case categoriesFacts = "categoriesFacts"
     case categories = "categories"
 }

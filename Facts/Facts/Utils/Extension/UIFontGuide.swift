@@ -11,14 +11,23 @@ import UIKit
 extension UIFont {
     
     @nonobjc class var h1: UIFont {
-        return UIFont.systemFont(ofSize: 24)
+        return UIFont.italicSystemFont(ofSize: 24)
     }
     
     @nonobjc class var h2: UIFont {
-        return UIFont.systemFont(ofSize: 16)
+        return UIFont.italicSystemFont(ofSize: 20)
     }
     
     @nonobjc class var h3: UIFont {
+        return UIFont.boldSystemFont(ofSize: 16)
+    }
+    
+    @nonobjc class var h4: UIFont {
         return UIFont.boldSystemFont(ofSize: 12)
     }
+    
+    class func chooseFont(value: Int, maxValue: Int, font1: UIFont, font2: UIFont) -> UIFont {
+        return value >= maxValue ? font2 : font1
+    }
+    
 }

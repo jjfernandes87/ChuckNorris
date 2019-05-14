@@ -12,20 +12,21 @@ import Foundation
 
 protocol FactsCollectionWireframeProtocol: class {
     func showDetail(_ content: Facts)
-    func showSearch()
+    func showSearch(delegate: SearchOutputProtocol)
 }
 
 // MARK: - Interactor
 
 protocol FactsCollectionInteractorInputProtocol {
     func downloadData()
+    func downloadBySearch(_ text: String)
+    func downloadByCategory(_ category: String)
 }
 
 // MARK: - Presenter
 
 protocol FactsCollectionPresenterInputProtocol: class {
     func viewDidLoad()
-    func viewWillAppear()
     func didSearchButton()
     func didSelectFact(_ content: Facts)
 }
@@ -39,5 +40,5 @@ protocol FactsCollectionInteractorOutputProtocol: class {
 
 protocol FactsCollectionPresenterOutputProtocol: class {
     func setRows(_ rows: [AnyObject])
-    func setLoadingView()
+    func setLoadingView(animate: Bool)
 }

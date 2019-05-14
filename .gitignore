@@ -91,3 +91,7 @@ reports/
 Facts/cobertura.xml
 Facts/reports/
 Facts/test_output/
+
+# slather
+
+Facts/html/

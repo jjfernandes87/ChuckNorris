@@ -31,5 +31,6 @@ class FactsDetailView: BaseView {
 extension FactsDetailView: FactsDetailPresenterOutputProtocol {
     func setRows(_ rows: [AnyObject]) {
         self.tableView.setRows(rows)
+        self.tableView.isUserInteractionEnabled = false
     }
 }

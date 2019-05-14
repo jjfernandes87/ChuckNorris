@@ -26,7 +26,6 @@ class BaseView: UIViewController {
     @IBOutlet weak var noContentXib: UIView?
     @IBOutlet weak var loadingXib: UIView?
     @IBOutlet weak var tableView: SelfTableViewManager!
-    
     @IBOutlet weak var spinner: UIActivityIndicatorView!
     
     override func viewDidLoad() {

@@ -1,0 +1,14 @@
+{
+    "responseStatus": {
+        "statusCode": 200,
+        "success": true,
+        "message": "Sucesso"
+    },
+    "data": {
+        "category": ["dev"],
+        "icon_url": "https://assets.chucknorris.host/img/avatar/chuck-norris.png",
+        "id": "xs-MfFrTTwSsEM4jVnNDiw",
+        "url": "https://api.chucknorris.io/jokes/xs-MfFrTTwSsEM4jVnNDiw",
+        "value": "All Chuck Norris facts should be told in a respectful whisper, whilst laying one's palms and forehead on the floor."
+    }
+}
