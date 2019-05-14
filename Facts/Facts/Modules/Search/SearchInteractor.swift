@@ -15,7 +15,8 @@ class SearchInteractor: NSObject, SearchInteractorInputProtocol {
     
     internal var categories: [String]?
     internal var latestSearch: [String]?
-    internal lazy var localManager = LatestSearchCoreDataModel()
+    internal lazy var termsManager = LatestSearchCoreDataModel()
+    internal lazy var categoriesManager = CategoriesCoreDataModel()
     
 	// MARK: - SearchInteractorInputProtocol
     func downloadData() {
@@ -32,7 +33,7 @@ class SearchInteractor: NSObject, SearchInteractorInputProtocol {
     
     func searchBar(_ term: String) {
         do {
-            try self.localManager.save(term: term)
+            _ = try self.termsManager.save(term: term)
         } catch {
             print(error.localizedDescription)
         }
@@ -42,22 +43,13 @@ class SearchInteractor: NSObject, SearchInteractorInputProtocol {
 // MARK: - Private Methods
 extension SearchInteractor {
     private func downloadCategories(dispatch: DispatchGroup) {
-        let config = RequestService.request(tag: URLEndpoints.categories.rawValue)
-        
         dispatch.enter()
-        ApiService.request(config: config, success: { [weak self] (statusCode, response) in
-            
-            guard let contract = JSONDecoder.decode(CategoriesContent.self, from: response) else {
-                self?.categories = []
-                dispatch.leave()
-                return
-            }
-            
-            self?.categories = contract.data
+        do {
+            let collection = try self.categoriesManager.fetch()
+            self.categories = collection.compactMap({ $0.tag }).choose(8)
             dispatch.leave()
-            
-        }) { [weak self] (statusCode, error) in
-            self?.categories = []
+        } catch {
+            self.categories = []
             dispatch.leave()
         }
     }
@@ -65,7 +57,7 @@ extension SearchInteractor {
     private func downloadTerms(dispatch: DispatchGroup) {
         dispatch.enter()
         do {
-            let collection = try self.localManager.fetch()
+            let collection = try self.termsManager.fetch()
             self.latestSearch = collection.compactMap({ $0.term })
             dispatch.leave()
         } catch {
