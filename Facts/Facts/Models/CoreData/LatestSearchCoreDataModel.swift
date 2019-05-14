@@ -10,12 +10,25 @@ import UIKit
 import CoreData
 
 class LatestSearchCoreDataModel: NSObject {
+    
+    func deleteAll() throws {
+        guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else { return }
+        let context = appDelegate.persistentContainer.viewContext
+        
+        let fetchRequest: NSFetchRequest<NSFetchRequestResult> = LatestSearch.fetchRequest()
+        let deleteRequest = NSBatchDeleteRequest(fetchRequest: fetchRequest)
+        
+        try context.execute(deleteRequest)
+        try context.save()
+    }
 
-    func save(term: String) throws {
+    func save(term: String) throws -> Bool {
         let filtered = try search(term: term)
         if filtered.count == 0 {
-           try save(term)
+            try save(term)
+            return true
         }
+        return false
     }
     
     func fetch() throws -> [LatestSearch] {

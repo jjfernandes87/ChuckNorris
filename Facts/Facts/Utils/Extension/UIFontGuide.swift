@@ -25,4 +25,9 @@ extension UIFont {
     @nonobjc class var h4: UIFont {
         return UIFont.boldSystemFont(ofSize: 12)
     }
+    
+    class func chooseFont(value: Int, maxValue: Int, font1: UIFont, font2: UIFont) -> UIFont {
+        return value >= maxValue ? font2 : font1
+    }
+    
 }

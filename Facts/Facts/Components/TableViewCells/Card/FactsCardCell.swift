@@ -39,7 +39,7 @@ class FactsCardCell: CellController {
     }
     
     private func font() -> UIFont {
-        return self.model.value.count >= 80 ? .h2 : .h1
+        return UIFont.chooseFont(value: self.model.value.count, maxValue: 80, font1: .h1, font2: .h2)
     }
     
 }
