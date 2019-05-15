@@ -11,6 +11,7 @@ import Alamofire
 
 enum GenericsError: Error {
     case unknown
+    case parse
 }
 
 typealias success = ((_ statusCode: Int, _ result: String?) -> Void)

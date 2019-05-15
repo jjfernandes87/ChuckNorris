@@ -10,6 +10,9 @@ target 'Facts' do
 
   # Pods for Facts
   pod 'Alamofire'
+  pod 'RxSwift', '~> 4'
+  pod 'RxCocoa', '~> 4'
+  pod 'RxSwiftExt'
 
   # Github myself
   pod 'SelfTableViewManager'
@@ -35,7 +38,6 @@ post_install do |installer|
     config.build_settings['DEBUG_INFORMATION_FORMAT'] = 'dwarf'
     config.build_settings['CLANG_ENABLE_CODE_COVERAGE'] = 'NO'
     config.build_settings['LD_RUNPATH_SEARCH_PATHS'] = ['$(FRAMEWORK_SEARCH_PATHS)']
-    config.build_settings['SWIFT_VERSION'] = '4.0'
     config.build_settings['ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES'] = '$(inherited)'
   end
 end
