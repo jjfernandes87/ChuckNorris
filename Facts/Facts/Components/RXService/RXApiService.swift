@@ -11,7 +11,7 @@ import RxSwift
 import RxSwiftExt
 
 typealias rxSuccess<T> = ((_ success: T) -> Void)
-typealias rxFailure = ((_ error: Error) -> Void)
+typealias rxFailure = ((_ error: GenericsError) -> Void)
 
 class RXApiService: NSObject {
     
@@ -40,7 +40,7 @@ class RXApiService: NSObject {
                 }
                 success(contract)
             }, onError: { (error) in
-                failure(error)
+                failure(error as! GenericsError)
             }
         ).disposed(by: RXApiService.dispose)
     }

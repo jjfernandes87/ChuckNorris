@@ -11,7 +11,6 @@ import UIKit
 class FactsDetailView: BaseView {
 
 	// MARK: - Viper Module Properties
-
 	var presenter: FactsDetailPresenterInputProtocol!
 
 	// MARK: - Override methods
@@ -20,7 +19,10 @@ class FactsDetailView: BaseView {
         super.viewDidLoad()
         self.presenter.viewDidLoad()
     }
-    
+}
+
+// MARK: - Actions
+extension FactsDetailView {
     @IBAction func shareAction() {
         self.presenter.didShareAction()
     }

@@ -23,33 +23,26 @@ extension FactsCollectionInteractor: FactsCollectionInteractorInputProtocol {
         RXApiService.request(config: config, type: FactsData.self, success: { [weak self] (contract) in
             self?.output?.facts(contract.data.result)
         }) { [weak self] (error) in
-            self?.output?.facts(error as! GenericsError)
+            self?.output?.facts(error)
         }
     }
     
     func downloadBySearch(_ text: String) {
         let config = RequestService.request(tag: URLEndpoints.facts.rawValue, parameters: ["query": text])
-        ApiService.request(config: config, success: { (statusCode, response) in
-            guard let contract = JSONDecoder.decode(FactsData.self, from: response) else {
-                self.output?.facts(GenericsError.unknown)
-                return
-            }
-            self.output?.facts(contract.data.result)
-        }) { (statusCode, error) in
-            self.output?.facts(GenericsError.unknown)
+        RXApiService.request(config: config, type: FactsData.self, success: { [weak self] (contract) in
+            self?.output?.facts(contract.data.result)
+        }) { [weak self] (error) in
+            self?.output?.facts(error)
         }
     }
     
     func downloadByCategory(_ category: String) {
         let config = RequestService.request(tag: URLEndpoints.categoriesFacts.rawValue, parameters: ["category": category])
-        ApiService.request(config: config, success: { (statusCode, response) in
-            guard let contract = JSONDecoder.decode(CategotyFact.self, from: response) else {
-                self.output?.facts(GenericsError.unknown)
-                return
-            }
-            self.output?.facts([contract.data])
-        }) { (statusCode, error) in
-            self.output?.facts(GenericsError.unknown)
+        RXApiService.request(config: config, type: CategotyFact.self, success: { [weak self] (contract) in
+            self?.output?.facts([contract.data])
+        }) { [weak self] (error) in
+            self?.output?.facts(error)
         }
     }
+    
 }

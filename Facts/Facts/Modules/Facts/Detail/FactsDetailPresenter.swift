@@ -19,8 +19,6 @@ class FactsDetailPresenter: NSObject {
         self.content = content
         super.init()
     }
-    
-    // MARK: - Private Methods
 
 }
 

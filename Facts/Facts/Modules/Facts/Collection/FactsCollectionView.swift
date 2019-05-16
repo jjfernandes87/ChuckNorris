@@ -63,6 +63,10 @@ extension FactsCollectionView: FactsCollectionPresenterOutputProtocol {
     func setLoadingView(animate: Bool) {
         self.setViewStatus(.loading, animated: animate)
     }
+    
+    func setError() {
+        self.setViewStatus(.masterError)
+    }
 }
 
 // MARK: - TableViewManagerDelegate

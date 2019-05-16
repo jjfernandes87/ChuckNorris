@@ -54,7 +54,7 @@ extension FactsCollectionPresenter: FactsCollectionInteractorOutputProtocol {
     }
     
     func facts(_ error: GenericsError) {
-        print("Acabou com o error: \(error.localizedDescription)")
+        self.view.setError()
     }
 }
 
