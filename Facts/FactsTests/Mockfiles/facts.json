@@ -1,6 +1,6 @@
 {
     "responseStatus": {
-        "statusCode": 404,
+        "statusCode": 504,
         "success": false,
         "message": "Sucesso"
     },

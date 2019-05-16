@@ -27,8 +27,8 @@ class ApiService: NSObject {
             method: config.method,
             parameters: config.parameters,
             encoding: config.parametersEncoding!,
-            headers: nil
-        ).validate(statusCode: 200..<300)
+            headers: nil)
+        .validate(statusCode: 200..<300)
         .debugLog()
         .responseString(encoding: String.Encoding.utf8) { (response) in
             

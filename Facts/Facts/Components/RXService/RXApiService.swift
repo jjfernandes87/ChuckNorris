@@ -32,7 +32,10 @@ class RXApiService: NSObject {
 
     class func request<T: Decodable>(config: RequestConfig, type: T.Type, success: @escaping rxSuccess<T>, failure: @escaping rxFailure) {
         _ = RXApiService.request(config: config)
-            .retry(.exponentialDelayed(maxCount: 3, initial: 4, multiplier: 1))
+            .retry(RepeatBehavior.exponentialDelayed(maxCount: 3, initial: 4, multiplier: 1), scheduler: MainScheduler.instance, shouldRetry: { (error) -> Bool in
+                guard let generic = error as? GenericsError else { return false }
+                return generic == GenericsError.error5xx
+            })
             .subscribe(onNext: { (result) in
                 guard let contract = JSONDecoder.decode(T.self, from: result) else {
                     failure(GenericsError.parse)
