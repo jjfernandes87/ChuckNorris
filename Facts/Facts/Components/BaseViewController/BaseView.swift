@@ -11,11 +11,13 @@ import SelfTableViewManager
 
 var preloadedLoadingXib: UINib!
 var preloadedNoContentXib: UINib!
+var preloadedMasterErrorXib: UINib!
 
 enum BaseStatus: Int {
     case unknown
     case loading
     case noContent
+    case masterError
     case presenting
 }
 
@@ -23,6 +25,7 @@ class BaseView: UIViewController {
     
     internal var status: BaseStatus?
     
+    @IBOutlet weak var masterErrorXib: UIView?
     @IBOutlet weak var noContentXib: UIView?
     @IBOutlet weak var loadingXib: UIView?
     @IBOutlet weak var tableView: SelfTableViewManager!
@@ -61,6 +64,14 @@ class BaseView: UIViewController {
             }
         }
         
+        if status == .masterError {
+            if let customView = masterErrorXib {
+                customView.alpha = 1.0
+                customView.backgroundColor = view.backgroundColor
+                view.bringSubview(toFront: customView)
+            }
+        }
+        
         if status == .presenting {
             self.showPresenting()
         }
@@ -88,6 +99,11 @@ class BaseView: UIViewController {
             statusViews.append(error)
         }
         
+        preloadedMasterErrorXib.instantiate(withOwner: self, options: nil)
+        if let error = masterErrorXib {
+            statusViews.append(error)
+        }
+        
         for statusView in statusViews {
             if statusView.superview == nil {
                 self.view.addSubview(statusView)
@@ -103,5 +119,6 @@ class BaseView: UIViewController {
     private func hiddenAll() {
         self.loadingXib?.alpha = 0
         self.noContentXib?.alpha = 0
+        self.masterErrorXib?.alpha = 0
     }
 }
