@@ -23,7 +23,7 @@ class RXApiService: NSObject {
                 observer.onNext(response ?? "")
                 observer.onCompleted()
             }) { (statusCode, error) in
-                observer.onError(GenericsError.unknown)
+                observer.onError(error)
                 observer.onCompleted()
             }
             return Disposables.create()
