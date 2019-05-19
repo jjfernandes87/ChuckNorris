@@ -12,6 +12,8 @@
 			<string>${bundle}/categoryFacts.json</string>
 			<key>facts</key>
 			<string>${bundle}/facts.json</string>
+			<key>test</key>
+			<string>${bundle}/test/{id}</string>
 		</dict>
 	</dict>
 	<key>Release</key>
@@ -24,6 +26,8 @@
 			<string>https://api.chucknorris.io/jokes/random</string>
 			<key>facts</key>
 			<string>https://api.chucknorris.io/jokes/search</string>
+			<key>test</key>
+			<string>test/{id}</string>
 		</dict>
 	</dict>
 </dict>
