@@ -11,6 +11,9 @@ import Alamofire
 
 enum GenericsError: Error {
     case unknown
+    case parse
+    case error5xx
+    case noInternet
 }
 
 typealias success = ((_ statusCode: Int, _ result: String?) -> Void)
@@ -24,8 +27,8 @@ class ApiService: NSObject {
             method: config.method,
             parameters: config.parameters,
             encoding: config.parametersEncoding!,
-            headers: nil
-        ).validate(statusCode: 200..<300)
+            headers: nil)
+        .validate(statusCode: 200..<300)
         .debugLog()
         .responseString(encoding: String.Encoding.utf8) { (response) in
             
@@ -33,14 +36,23 @@ class ApiService: NSObject {
                 let statusCode = data.responseStatus.statusCode {
                 switch data.responseStatus.success {
                 case true: success(statusCode, response.value)
-                case false: failure(statusCode, GenericsError.unknown)
+                case false:
+                    switch statusCode {
+                    case 500..<600: failure(statusCode, GenericsError.error5xx)
+                    default: failure(statusCode, GenericsError.unknown)
+                    }
                 }
                 return
             }
             
             switch response.result {
             case .success: success(response.response?.statusCode ?? 200, ApiService.restFormatter(value: response.value))
-            case .failure(_): failure(response.response?.statusCode ?? 500, GenericsError.unknown)
+            case .failure(_):
+                let statusCode = response.response?.statusCode ?? 500
+                switch statusCode {
+                case 500..<600: failure(statusCode, GenericsError.error5xx)
+                default: failure(statusCode, GenericsError.unknown)
+                }
             }
             
         }

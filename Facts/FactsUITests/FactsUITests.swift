@@ -49,6 +49,10 @@ class FactsUITests: XCTestCase {
         
         app.tables.cells.element(boundBy: 1).tap()
         app.navigationBars["Facts.FactsDetailView"].buttons["Share"].tap()
+        
+        _ = self.expectation(for: NSPredicate(format: "self.exists == true"), evaluatedWith: app.buttons["Cancel"], handler: nil)
+        self.waitForExpectations(timeout: 10.0, handler: nil)
+        
         XCTAssertTrue(app.buttons["Cancel"].exists, "shared controller did not show")
         snapshot("3Shared detail content")
     }

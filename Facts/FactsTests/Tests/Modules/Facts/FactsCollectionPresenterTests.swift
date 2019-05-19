@@ -35,6 +35,11 @@ class FactsCollectionPresenterSpec: QuickSpec {
                 presenter.didSearchButton()
                 expect(wireframe.showSearchBool).toEventually(equal(true))
             }
+            
+            it("setError was called") {
+                presenter.facts(GenericsError.unknown)
+                expect(view.setErrorBool).toEventually(equal(true))
+            }
         }
     }
     
@@ -43,8 +48,8 @@ class FactsCollectionPresenterSpec: QuickSpec {
 class MockCollectionView: FactsCollectionPresenterOutputProtocol {
     
     var setLoadingViewBool = false
-    
     var setRowsBool = false
+    var setErrorBool = false
     
     func setRows(_ rows: [AnyObject]) {
         self.setRowsBool = true
@@ -52,6 +57,10 @@ class MockCollectionView: FactsCollectionPresenterOutputProtocol {
     
     func setLoadingView(animate: Bool) {
         self.setLoadingViewBool = true
+    }
+    
+    func setError() {
+        self.setErrorBool = true
     }
     
 }

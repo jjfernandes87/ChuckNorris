@@ -21,6 +21,7 @@ class AppSequence: LaunchApplication {
     func preloadedXib() {
         preloadedLoadingXib = UINib(nibName: "LoadingView", bundle: Bundle.main)
         preloadedNoContentXib = UINib(nibName: "NoContent", bundle: Bundle.main)
+        preloadedMasterErrorXib = UINib(nibName: "MasterError", bundle: Bundle.main)
         nextLaunchStage()
     }
     
@@ -28,14 +29,9 @@ class AppSequence: LaunchApplication {
         let categoriesManager = CategoriesCoreDataModel()
         let config = RequestService.request(tag: URLEndpoints.categories.rawValue)
         
-        ApiService.request(config: config, success: { (statusCode, response) in
-            guard let contract = JSONDecoder.decode(CategoriesContent.self, from: response) else { return }
-            do {
-                _ = try categoriesManager.save(contract.data)
-            } catch {
-                print(error.localizedDescription)
-            }
-        }) { (statusCode, error) in
+        RXApiService.request(config: config, type: CategoriesContent.self, success: { (contract) in
+            _ = try! categoriesManager.save(contract.data)
+        }) { (error) in
             print(error.localizedDescription)
         }
         
