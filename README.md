@@ -156,7 +156,7 @@ Para esse item foi usado CoreData.
 
 Por se tratar de uma aplicação pequena, acabei tratando tudo dentro da Interactor do modulo de collection. Talvez em uma aplicação menor, separar um pouco da responsabilidades e também seguindo o conceito de SOLID ou Clean (mas a divisão de metodos ficou claro, dentro da mesma classe)
 
-O teste pedia que a base local seria verdade para toda a aplicação, eu segui o que foi pedido, mas para não ter 'import CoreData' na aplicação, eu fiz um parse entre objetos e acabo utilizando uma classe (mesma usada na parse da API) 
+O teste pedia que a base local seria verdade para toda a aplicação, eu segui o que foi pedido, mas para não ter 'import CoreData' na aplicação, eu fiz um parse entre objetos e acabo utilizando uma classe (mesma usada na parse da API). Com isso eu posso mudar no futuro para Realm que não teria impacto na aplicação, assim como no Extra I que utilizei RX em apenas uma parte eu segui o mesmo conceito e mantive a arquitetura original (é possivel acompanhar pelo historico de commit)
 
 Os dados deveriam estar relacionados ao termo, nesse caso eu não usei o relacionamento de Coredata entre o termo buscado no modulo de search e o retorno da API, por ser uma simples String os protocolos de comunicação entre os modulos, acabei utilizando o termo digitado e salvando dentro do contexto do CoreData do proprio objeto.
 
@@ -175,3 +175,26 @@ Alguns cenários que foi testado:
 * Primeiro acesso sem internet: baixa os dados (retry pedido no extra I se necessário) e retorna erro para a interface
 * Segundo acesso com internet e dados: baixa os dados, salva apenas os novos no banco e popula a interface
 * Segundo acesso sem internet: baixa os dados (retry pedido no extra I se necessário) e retorna os dados locais
+
+## Prints
+
+<p align="center">
+  <img src="screenshots/terminal.png" align="center" width=200>
+  <img src="screenshots/coverage.png" align="center" width=200>
+</p>
+
+<p align="center">
+  <img src="screenshots/interface1.png" align="center" width=200>
+  <img src="screenshots/interface2.png" align="center" width=200>
+</p>
+
+## Conslusão
+
+Eu procurei manter uma arquitetura do começo ao fim, pelo historico de commits é possivel ver a evolução do teste. 
+
+No começo toda chamada era feita na API e o resultado retorna para a aplicação, depois foi criado o modulo de busca seguindo o mesmo conceito. Apos a base do app feita e um MVP criado, os criterios de aceite foram ganhando forma e a aplicação passou a responder com dados locais, chamadas realizadas na abertura da aplicação, abstrações foram sendo criadas para seguir as regras do teste. 
+
+Procurei testar boa parte da aplicação, algumas coisas ficaram de fora com interactor (podia ter extendido e criado mais mocks locais de erro), mas tudo foi testado manualmente e principalmente a teste integrado com API e Interface garante o uso correto da aplicação.
+
+Fiz uso de libs proprias o que abre uma extensão do teste e mostra um pouco mais do meu conhecimento também.
+
