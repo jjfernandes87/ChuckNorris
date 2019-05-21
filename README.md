@@ -176,14 +176,19 @@ Alguns cenários que foi testado:
 * Segundo acesso com internet e dados: baixa os dados, salva apenas os novos no banco e popula a interface
 * Segundo acesso sem internet: baixa os dados (retry pedido no extra I se necessário) e retorna os dados locais
 
-###### Prints
+## Prints
 
 <p align="center">
   <img src="screenshots/terminal.png" align="center" width=200>
   <img src="screenshots/coverage.png" align="center" width=200>
 </p>
 
-###### Conslusão
+<p align="center">
+  <img src="screenshots/interface1.png" align="center" width=200>
+  <img src="screenshots/interface2.png" align="center" width=200>
+</p>
+
+## Conslusão
 
 Eu procurei manter uma arquitetura do começo ao fim, pelo historico de commits é possivel ver a evolução do teste. 
 
