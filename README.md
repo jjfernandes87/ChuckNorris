@@ -185,3 +185,4 @@ No começo toda chamada era feita na API e o resultado retorna para a aplicaçã
 Procurei testar boa parte da aplicação, algumas coisas ficaram de fora com interactor (podia ter extendido e criado mais mocks locais de erro), mas tudo foi testado manualmente e principalmente a teste integrado com API e Interface garante o uso correto da aplicação.
 
 Fiz uso de libs proprias o que abre uma extensão do teste e mostra um pouco mais do meu conhecimento também.
+
