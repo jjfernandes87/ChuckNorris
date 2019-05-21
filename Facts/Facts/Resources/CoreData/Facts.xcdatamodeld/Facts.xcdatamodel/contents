@@ -1,15 +1,21 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="14490.99" systemVersion="18E227" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
-    <entity name="Category" representedClassName="Category" syncable="YES" codeGenerationType="class">
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="14490.99" systemVersion="18F132" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+    <entity name="CategoryCD" representedClassName="CategoryCD" syncable="YES" codeGenerationType="class">
         <attribute name="tag" optional="YES" attributeType="String" syncable="YES"/>
-        <attribute name="updatedAt" optional="YES" attributeType="Date" usesScalarValueType="NO" syncable="YES"/>
     </entity>
-    <entity name="LatestSearch" representedClassName="LatestSearch" syncable="YES" codeGenerationType="class">
-        <attribute name="createdAt" optional="YES" attributeType="Date" usesScalarValueType="NO" syncable="YES"/>
+    <entity name="FactCD" representedClassName="FactCD" syncable="YES" codeGenerationType="class">
+        <attribute name="category" attributeType="Transformable" customClassName="[String]" syncable="YES"/>
+        <attribute name="id" attributeType="String" syncable="YES"/>
+        <attribute name="term" attributeType="String" syncable="YES"/>
+        <attribute name="url" attributeType="String" syncable="YES"/>
+        <attribute name="value" attributeType="String" syncable="YES"/>
+    </entity>
+    <entity name="LatestSearchCD" representedClassName="LatestSearchCD" syncable="YES" codeGenerationType="class">
         <attribute name="term" optional="YES" attributeType="String" syncable="YES"/>
     </entity>
     <elements>
-        <element name="LatestSearch" positionX="-63" positionY="-18" width="128" height="75"/>
-        <element name="Category" positionX="-54" positionY="9" width="128" height="75"/>
+        <element name="CategoryCD" positionX="-54" positionY="9" width="128" height="60"/>
+        <element name="LatestSearchCD" positionX="-63" positionY="-18" width="128" height="60"/>
+        <element name="FactCD" positionX="-54" positionY="9" width="128" height="120"/>
     </elements>
 </model>

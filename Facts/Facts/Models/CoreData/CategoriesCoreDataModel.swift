@@ -28,11 +28,11 @@ class CategoriesCoreDataModel: NSObject {
         return result
     }
     
-    func fetch() throws -> [Category] {
+    func fetch() throws -> [CategoryCD] {
         guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else { return [] }
         let context = appDelegate.persistentContainer.viewContext
         
-        if let collection = try context.fetch(Category.fetchRequest()) as? [Category] {
+        if let collection = try context.fetch(CategoryCD.fetchRequest()) as? [CategoryCD] {
             return collection
         }
         
@@ -46,9 +46,8 @@ extension CategoriesCoreDataModel {
         guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else { return }
         let context = appDelegate.persistentContainer.viewContext
         
-        let category = Category(context: context)
+        let category = CategoryCD(context: context)
         category.tag = data
-        category.updatedAt = date
             
         try context.save()
     }
@@ -57,7 +56,7 @@ extension CategoriesCoreDataModel {
         guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else { return }
         let context = appDelegate.persistentContainer.viewContext
         
-        let fetchRequest: NSFetchRequest<NSFetchRequestResult> = Category.fetchRequest()
+        let fetchRequest: NSFetchRequest<NSFetchRequestResult> = CategoryCD.fetchRequest()
         let deleteRequest = NSBatchDeleteRequest(fetchRequest: fetchRequest)
         
         try context.execute(deleteRequest)
