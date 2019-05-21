@@ -15,7 +15,7 @@ class LatestSearchCoreDataModel: NSObject {
         guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else { return }
         let context = appDelegate.persistentContainer.viewContext
         
-        let fetchRequest: NSFetchRequest<NSFetchRequestResult> = LatestSearch.fetchRequest()
+        let fetchRequest: NSFetchRequest<NSFetchRequestResult> = LatestSearchCD.fetchRequest()
         let deleteRequest = NSBatchDeleteRequest(fetchRequest: fetchRequest)
         
         try context.execute(deleteRequest)
@@ -31,11 +31,11 @@ class LatestSearchCoreDataModel: NSObject {
         return false
     }
     
-    func fetch() throws -> [LatestSearch] {
+    func fetch() throws -> [LatestSearchCD] {
         guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else { return [] }
         let context = appDelegate.persistentContainer.viewContext
         
-        if let collection = try context.fetch(LatestSearch.fetchRequest()) as? [LatestSearch] {
+        if let collection = try context.fetch(LatestSearchCD.fetchRequest()) as? [LatestSearchCD] {
             return collection
         }
         
@@ -50,14 +50,13 @@ extension LatestSearchCoreDataModel {
         guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else { return }
         let context = appDelegate.persistentContainer.viewContext
         
-        let term = LatestSearch(context: context)
+        let term = LatestSearchCD(context: context)
         term.term = data
-        term.createdAt = Date()
         
         try context.save()
     }
     
-    private func search(term: String) throws -> [LatestSearch] {
+    private func search(term: String) throws -> [LatestSearchCD] {
         return try self.fetch().filter { (item) -> Bool in
             return item.term == term
         }

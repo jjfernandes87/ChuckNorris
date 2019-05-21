@@ -19,8 +19,7 @@ class FactsDetailPresenterSpec: QuickSpec {
         beforeEach {
             let url = URL(string: "https://api.chucknorris.io/jokes/xs-MfFrTTwSsEM4jVnNDiw")!
             let text = "All Chuck Norris facts should be told in a respectful whisper, whilst laying one's palms and forehead on the floor."
-            
-            presenter = FactsDetailPresenter(content: Facts(category: nil, url: url, value: text))
+            presenter = FactsDetailPresenter(content: Facts(category: nil, url: url, value: text, id: "1"))
             presenter.view = view
         }
         

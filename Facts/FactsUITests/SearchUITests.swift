@@ -51,7 +51,12 @@ class SearchUITests: XCTestCase {
         self.tapKeyboard("i", app: app)
         self.tapKeyboard("c", app: app)
         app/*@START_MENU_TOKEN@*/.buttons["Search"]/*[[".keyboards.buttons[\"Search\"]",".buttons[\"Search\"]"],[[[-1,1],[-1,0]]],[0]]@END_MENU_TOKEN@*/.tap()
+        
         app.navigationBars["CHUCK NORRIS FACTS"].buttons["Search"].tap()
+        
+        _ = self.expectation(for: NSPredicate(format: "self.exists == true"), evaluatedWith: app.staticTexts["Music"], handler: nil)
+        self.waitForExpectations(timeout: 10.0, handler: nil)
+        
         XCTAssertTrue(app.staticTexts["Music"].exists, "did not show last search")
     }
 
