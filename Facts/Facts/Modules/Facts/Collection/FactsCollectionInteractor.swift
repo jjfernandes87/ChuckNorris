@@ -25,18 +25,18 @@ extension FactsCollectionInteractor: FactsCollectionInteractorInputProtocol {
         let term = "facts"
         self.fetchByTerm(parameters: ["query": term], term: term)
     }
-    
+
     func downloadBySearch(_ text: String) {
         self.fetchByTerm(parameters: ["query": text], term: text)
     }
     
     func downloadByCategory(_ category: String) {
-//        let config = RequestService.request(tag: URLEndpoints.categoriesFacts.rawValue, parameters: ["category": category])
-//        RXApiService.request(config: config, type: CategotyFact.self, success: { [weak self] (contract) in
-//            self?.output?.facts([contract.data])
-//        }) { [weak self] (error) in
-//            self?.output?.facts(error)
-//        }
+        let config = RequestService.request(tag: URLEndpoints.categoriesFacts.rawValue, parameters: ["category": category])
+        RXApiService.request(config: config, type: CategotyFact.self, success: { [weak self] (contract) in
+            self?.output?.facts([contract.data])
+        }) { [weak self] (error) in
+            self?.output?.facts(error)
+        }
     }
     
 }
@@ -66,19 +66,23 @@ extension FactsCollectionInteractor {
     private func fetchByTerm(parameters: [String: Any], term: String) {
         self.downloadData(parameters: ["query": term]) { [weak self] (collection, genericError) in
             
-            //Erro ao buscar dados da API
+            //Erro ao buscar dados da API e verifica no banco se existe dados
             if let error = genericError {
-                self?.output?.facts(error)
+                
+                do {
+                    let collection = try self?.factManager.fetchByTerm(term)
+                    self?.syncResult((true, collection ?? []))
+                } catch _ {
+                    self?.output?.facts(error)
+                }
+                
+                return
             }
             
             //Sync com o coredata
             if let facts = collection {
-                let result = self?.factManager.syncData(facts, term: term)
-                if let data = result?.1, result?.0 == true  {
-                    self?.output?.facts(data)
-                } else {
-                    self?.output?.facts(GenericsError.unknown)
-                }
+                self?.syncResult(self?.factManager.syncData(facts, term: term))
+                return
             }
             
             //Erro desconhecido já que não temos nem coleção de dados e erro na API
@@ -86,4 +90,20 @@ extension FactsCollectionInteractor {
         }
     }
     
+    /// Retorna os dados recuperados no coredata para a aplicação
+    ///
+    /// - Parameter result: sync result
+    private func syncResult(_ result: SyncResult?) {
+        guard let data = result else {
+            self.output?.facts(GenericsError.unknown)
+            return
+        }
+        
+        if !data.successfull {
+            self.output?.facts(GenericsError.unknown)
+            return
+        }
+        
+        self.output?.facts(self.factManager.convert(data.collection))
+    }
 }

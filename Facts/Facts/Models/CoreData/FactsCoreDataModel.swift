@@ -9,9 +9,23 @@
 import UIKit
 import CoreData
 
+typealias SyncResult = (successfull: Bool, collection: [FactCD])
+
 class FactsCoreDataModel: NSObject {
     
-    func syncData(_ facts: [Facts], term: String) -> (Bool, [FactCD]) {
+    func convert(_ facts: [FactCD]) -> [Facts] {
+        var collection = [Facts]()
+        facts.forEach { (item) in
+            collection.append(Facts(category: item.category,
+                                    url: URL(string: item.url!)!,
+                                    value: item.value!,
+                                    id: item.id!))
+        }
+        
+        return collection
+    }
+    
+    func syncData(_ facts: [Facts], term: String) -> SyncResult {
         guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else { return (false, []) }
         let context = appDelegate.persistentContainer.viewContext
         
