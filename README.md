@@ -10,7 +10,7 @@ Para acompanhamento das Issues e Milestones você pode acessar:
 Criei também um Guia (board) do projeto que você pode acessar: 
 [https://github.com/users/jjfernandes87/projects/1](https://github.com/users/jjfernandes87/projects/1)
 
-A API do Chuck Norris eu achei ela talvez confusa, você é obrigado a passar um termo para retornar a lista, passar vazio retorna erro, quando busca por categorias retorna termo unico. 
+A API do Chuck Norris eu achei ela talvez confusa, você é obrigado a passar um termo para retornar a lista, passar vazio retorna erro, quando busca por categorias retorna termo único. 
 
 ## Passo a passo de como rodar o projeto
 
@@ -22,7 +22,7 @@ Abra o terminal e use o seguindo comando para instalar o Bundler:
 gem install bundler
 ```
 
-Para executar a aplicação, siga o comando abaixo::
+Para executar a aplicação, siga o comando abaixo:
 
 ```
 cd Facts/
@@ -57,7 +57,7 @@ bundle exec fastlane screenshots
 
 ## Arquitetura
 
-Para esse projeto foi usado o VIPER, sendo uma forma de usar a Clean Architecture e assim fazer as interações entre as camadas propostas pelo Uncle Bob. 
+Para esse projeto foi usado o VIPER, sendo uma forma de usar a Clean Architecture e assim fazer as interações entre as camadas. 
 VIPER é formado pelas seguintes palavras: 
 
 View -> Telas
@@ -111,6 +111,8 @@ Alem disso estou usando fastlane Snapshot
 - pod 'Alamofire'
 - pod 'Quick'
 - pod 'Nimble'
+- pod 'RxSwift', '~> 4'
+- pod 'RxCocoa', '~> 4'
 
 ###### Próprios:
 - pod 'SelfTableViewManager'
@@ -146,7 +148,7 @@ Por esses motivos o que eu fiz foi criar uma abstração da camada de RXSwift, d
 - Trocar a lib de RX por outra no futuro que se torne melhor sem impactar em nada a aplicação
 - Não deixo preso a architetura do meu app com uma lib terceira
 - Não tenho import de RX pelo projeto
-- Consigo trabalhar que todas as chamadas do app passem por lá e trate tudo em um unico lugar
+- Consigo trabalhar que todas as chamadas do app passem por lá e trate tudo em um único lugar
 
 A mesma coisa foi feita com o Alamofire, eu criei uma abstração dela para que seja possivel alterar para URLSession, AFNetwork ou qualquer lib que faça chamadas HTTP.
 
@@ -168,7 +170,7 @@ Dentro da Interactor (responsável pela regra de negócio do produto) eu faço o
 * O sync por sua vez so adiciona itens novos, filtrando por id
 * retorno a collection do banco e converto para o objeto final
 
-Alguns cenários que foi testado:
+Alguns cenários que foram testados:
 
 * Primeiro acesso com internet e com resultado: baixa os dados, salva no banco e popula a interface
 * Primeiro acesso com internet e erro na API: baixa o dados (retry pedido no extra I se necessário) e retorna erro para a interface
