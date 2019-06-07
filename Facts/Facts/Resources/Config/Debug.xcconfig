@@ -1,4 +1,4 @@
 #include "Pods/Target Support Files/Pods-Facts/Pods-Facts.debug.xcconfig"
 
-SCHEME="Debug"
+SCHEME="Release"
 DISPLAY_NAME=FactsDev
